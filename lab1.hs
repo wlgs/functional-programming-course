@@ -1,4 +1,5 @@
 {-# OPTIONS_GHC -Wno-overlapping-patterns #-}
+import Distribution.Simple.PackageIndex (searchByNameSubstring)
 printHello = putStrLn "Hello"
 
 
@@ -146,3 +147,36 @@ isItTheAnswer2 s = case s of
                     "42"    -> True
                     "Love"  -> True
                     _       -> False
+
+
+roots :: (Double, Double, Double) -> (Double, Double)
+roots (a, b, c) = ( (-1*b-d)/e, (-1*b+d)/e )
+   where d = sqrt ((b * b) - (4 * a * c))
+         e = 2 * a
+
+unitVec2D :: (Double, Double) -> (Double, Double)
+unitVec2D (x, y) = (x/a, y/a)
+    where a = vec2DLen(x,y)
+
+
+triangleArea2 :: (Double, Double, Double) -> Double
+triangleArea2 (a, b, c) = sqrt(p*(p-a)*(p-b)*(p-c))
+    where p = 0.5*(a+b+c)
+
+
+
+triangleArea3 :: (Double, Double, Double) -> Double
+triangleArea3 (a, b, c) =
+    let p = 0.5*(a+b+c)
+    in sqrt(p*(p-a)*(p-b)*(p-c))
+
+-- tak piszemy komentarze
+
+roots3 :: (Double, Double, Double) -> (Double, Double)
+roots3 (a, b, c) = ( (-b - d) / e, (-b + d) / e )
+   where 
+       {    
+        d = sqrt (b * b - 4 * a * c);
+        e = 2*a;
+       }
+
