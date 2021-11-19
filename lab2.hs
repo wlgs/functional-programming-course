@@ -1,16 +1,5 @@
 {-# LANGUAGE BangPatterns #-}
 import Data.Char (toUpper)
--- na next kartkowce sekcja operatorow lub partial aplication
--- oraz zadanie typu lista i co wyjdzie (?)
--- uzupełnić kawałki kodu by lista była uzupełniona
--- zadanie z rekurencji wiedziec ocb znac terminy
--- czyli
--- 4 zadania
--- sekcja operatorow
--- proste funkcje listowe
--- list comprehension
--- rekurencja
-
 
 myFun x = 2 * x
 
