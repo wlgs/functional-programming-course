@@ -156,3 +156,61 @@ depthOfBT (NodeBT n l r) = max (1 + depthOfBT l) (1 + depthOfBT r)
 -- flattenBTPre :: BinTree a -> [a]  -- napisać trzy wersje: preorder, inorder, postorder
 -- flattenBTPre EmptyBT = []
 -- flattenBTPre (NodeBT n l r) = 
+
+flattenBTPre :: BinTree a -> [a]
+flattenBTPre EmptyBT = []
+flattenBTPre (NodeBT n l r ) = [n] ++ flattenBTPre l ++  flattenBTPre r
+
+flattenBTPost :: BinTree a -> [a]
+flattenBTPost EmptyBT = []
+flattenBTPost (NodeBT n l r ) = flattenBTPre l  ++ flattenBTPre r ++ [n]
+
+flattenBTIn :: BinTree a -> [a]
+flattenBTIn EmptyBT = []
+flattenBTIn (NodeBT n l r ) = flattenBTPre l ++ [n] ++ flattenBTPre r
+
+mapBT :: (a -> b) -> BinTree a -> BinTree b -- funkcja map dla drzewa binarnego
+mapBT f EmptyBT = EmptyBT
+mapBT f (NodeBT n l r) = NodeBT (f n) (mapBT f l) (mapBT f r)
+
+
+insert :: Ord a => a -> BinTree a -> BinTree a -- insert element into BinTree
+insert el EmptyBT = NodeBT el EmptyBT EmptyBT
+insert el (NodeBT n l r)    | el > n = NodeBT n l (insert el r)
+                            | el < n = NodeBT n (insert el l) r
+                            | otherwise = NodeBT n l r
+
+
+newtype MyInt = MkMyInt Int
+instance Eq MyInt where
+  (==) (MkMyInt i1) (MkMyInt i2) = i1 == i2
+instance Ord MyInt where
+  (<=) (MkMyInt i1) (MkMyInt i2) = i1 <= i2
+
+instance Num MyInt where
+  (+) (MkMyInt i1) (MkMyInt i2) = MkMyInt (i1 + i2)
+  (-) (MkMyInt i1) (MkMyInt i2) = MkMyInt (i1 - i2)
+  (*) (MkMyInt i1) (MkMyInt i2) = MkMyInt (i1 * i2)
+  negate (MkMyInt i)            = MkMyInt (negate i)
+  abs (MkMyInt i)               = MkMyInt (abs i)
+  signum (MkMyInt i)            = MkMyInt (signum i)
+  fromInteger int               = MkMyInt (fromIntegral int)
+
+instance Show MyInt where
+  show (MkMyInt i) = "MkMyInt " ++ show i
+
+instance Eq a => Eq (BinTree a) where
+    (==) (NodeBT n l r) (NodeBT n2 l2 r2) = n==n2 && l==l2  && r==r2
+    (==) (EmptyBT) (EmptyBT) = True
+
+
+
+-- ćwiczenia na kartkówke
+
+data PersonID = PersonID {first :: String, second :: String} 
+
+newtype Box a = MkBox { valueInside :: Int}
+instance Show a => Show (Box a) where
+    show (MkBox {valueInside = v}) = "Box with " ++ show v
+
+
