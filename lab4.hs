@@ -214,3 +214,8 @@ instance Show a => Show (Box a) where
     show (MkBox {valueInside = v}) = "Box with " ++ show v
 
 
+data Tree a = Node (Tree a) a (Tree a) | Leaf
+
+sumSq :: Num p => Tree p -> p
+sumSq Leaf = 0
+sumSq (Node left x right) = x^2 + sumSq left + sumSq right
