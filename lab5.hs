@@ -68,6 +68,13 @@ twoQuestions = do
   print (name,age)     
 
 
+-- twoQuestions' :: IO ()
+-- twoQuestions' = putStrLn "What is your name?" 
+--             >>= \n -> getLine
+--             >> putStr "How old are you?" 
+--             >>= \a -> getLine
+--             >> 
+
 
 -- ^ TODO THE FUNCITONS
 
@@ -175,4 +182,7 @@ newtype MyTriple a = MyTriple (a,a,a) deriving Show
 
 
 
-  
+
+
+
+-- trening do kartkowki:
