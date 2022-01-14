@@ -194,3 +194,6 @@ paths:: Tree a -> [[a]]
 paths Leaf = pure []
 paths (Node a lt rt) = concat $ ([(a :)] <*>) <$> (fmap paths [lt,rt])
 
+
+ -- Sadly or not I am not willing to complete this set of functional questions/problems
+ -- I'm done with the course for now as I got my mark already (5.0)
