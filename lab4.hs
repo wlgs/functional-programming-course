@@ -1,9 +1,3 @@
--- KARTKÓWKA
--- zadanie 1:   definicja struktury, i obliczyć co będzie(?)
--- zadanie 2:   definicja typu, uzupełnić kawałki instancji definicji klasy
--- zadanie 3:   *nie usłyszałem sadge*
-
-
 polarToCartesian :: Floating a => (a,a) -> (a,a)
 polarToCartesian (r,phi) = (r * cos phi, r * sin phi)
 

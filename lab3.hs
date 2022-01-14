@@ -1,13 +1,5 @@
 import Data.Char
 import Data.List
--- KARTKOWKA
--- zadanie 1:  otrzymujemy list comprehension
---             piszemy jako map/filter/fold
--- zadanie 2:  zadanie z operatorów kropki, dolara,
---             napisać co to wyrażenia zwróci
--- zadanie 3:  zrealizować collection pipeline
---             które da określony output
-
 
 -- Napisać funkcje anonimowe (wyrażenia lambda) odpowiadające:
 

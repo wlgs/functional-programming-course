@@ -3,12 +3,6 @@
 -- import System.Environment
 {-# LANGUAGE DeriveFunctor #-}
 
-
--- kartkówka:
--- 1. kod wejścia wyjścia używający 1 z 2 form, przerobić na tę inną
--- 2. znów typy (dopasować typy do operatora)
--- 3. wykorzystanie funktorów aplikatywnych
-
 actSeq = putChar 'A' >> putChar 'G' >> putChar 'H' >>  putChar '\n'
 
 doActSeq :: IO ()
