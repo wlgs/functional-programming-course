@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<!-- saved from url=(0090)https://upel2.cel.agh.edu.pl/wiet/pluginfile.php/97507/mod_resource/content/2/fp-lab3.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>Programowanie funkcyjne - laboratorium 3.</title>
+  <meta name="generator" content="Haroopad 0.13.1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://upel2.cel.agh.edu.pl/wiet/pluginfile.php/97507/mod_resource/content/2/img/favicon.ico" rel="icon" type="image/x-icon">
+
+  <style>div.oembedall-githubrepos{border:1px solid #DDD;border-radius:4px;list-style-type:none;margin:0 0 10px;padding:8px 10px 0;font:13.34px/1.4 helvetica,arial,freesans,clean,sans-serif;width:452px;background-color:#fff}div.oembedall-githubrepos .oembedall-body{background:-moz-linear-gradient(center top,#FAFAFA,#EFEFEF);background:-webkit-gradient(linear,left top,left bottom,from(#FAFAFA),to(#EFEFEF));border-bottom-left-radius:4px;border-bottom-right-radius:4px;border-top:1px solid #EEE;margin-left:-10px;margin-top:8px;padding:5px 10px;width:100%}div.oembedall-githubrepos h3{font-size:14px;margin:0;padding-left:18px;white-space:nowrap}div.oembedall-githubrepos p.oembedall-description{color:#444;font-size:12px;margin:0 0 3px}div.oembedall-githubrepos p.oembedall-updated-at{color:#888;font-size:11px;margin:0}div.oembedall-githubrepos ul.oembedall-repo-stats{border:none;float:right;font-size:11px;font-weight:700;padding-left:15px;position:relative;z-index:5;margin:0}div.oembedall-githubrepos ul.oembedall-repo-stats li{border:none;color:#666;display:inline-block;list-style-type:none;margin:0!important}div.oembedall-githubrepos ul.oembedall-repo-stats li a{background-color:transparent;border:none;color:#666!important;background-position:5px -2px;background-repeat:no-repeat;border-left:1px solid #DDD;display:inline-block;height:21px;line-height:21px;padding:0 5px 0 23px}div.oembedall-githubrepos ul.oembedall-repo-stats li:first-child a{border-left:medium none;margin-right:-3px}div.oembedall-githubrepos ul.oembedall-repo-stats li a:hover{background:5px -27px no-repeat #4183C4;color:#FFF!important;text-decoration:none}div.oembedall-githubrepos ul.oembedall-repo-stats li:first-child a:hover{border-bottom-left-radius:3px;border-top-left-radius:3px}ul.oembedall-repo-stats li:last-child a:hover{border-bottom-right-radius:3px;border-top-right-radius:3px}span.oembedall-closehide{background-color:#aaa;border-radius:2px;cursor:pointer;margin-right:3px}div.oembedall-container{margin-top:5px;text-align:left}.oembedall-ljuser{font-weight:700}.oembedall-ljuser img{vertical-align:bottom;border:0;padding-right:1px}.oembedall-stoqembed{border-bottom:1px dotted #999;float:left;overflow:hidden;width:730px;line-height:1;background:#FFF;color:#000;font-family:Arial,Liberation Sans,DejaVu Sans,sans-serif;font-size:80%;text-align:left;margin:0;padding:0}.oembedall-stoqembed a{color:#07C;text-decoration:none;margin:0;padding:0}.oembedall-stoqembed a:hover{text-decoration:underline}.oembedall-stoqembed a:visited{color:#4A6B82}.oembedall-stoqembed h3{font-family:Trebuchet MS,Liberation Sans,DejaVu Sans,sans-serif;font-size:130%;font-weight:700;margin:0;padding:0}.oembedall-stoqembed .oembedall-reputation-score{color:#444;font-size:120%;font-weight:700;margin-right:2px}.oembedall-stoqembed .oembedall-user-info{height:35px;width:185px}.oembedall-stoqembed .oembedall-user-info .oembedall-user-gravatar32{float:left;height:32px;width:32px}.oembedall-stoqembed .oembedall-user-info .oembedall-user-details{float:left;margin-left:5px;overflow:hidden;white-space:nowrap;width:145px}.oembedall-stoqembed .oembedall-question-hyperlink{font-weight:700}.oembedall-stoqembed .oembedall-stats{background:#EEE;margin:0 0 0 7px;padding:4px 7px 6px;width:58px}.oembedall-stoqembed .oembedall-statscontainer{float:left;margin-right:8px;width:86px}.oembedall-stoqembed .oembedall-votes{color:#555;padding:0 0 7px;text-align:center}.oembedall-stoqembed .oembedall-vote-count-post{font-size:240%;color:#808185;display:block;font-weight:700}.oembedall-stoqembed .oembedall-views{color:#999;padding-top:4px;text-align:center}.oembedall-stoqembed .oembedall-status{margin-top:-3px;padding:4px 0;text-align:center;background:#75845C;color:#FFF}.oembedall-stoqembed .oembedall-status strong{color:#FFF;display:block;font-size:140%}.oembedall-stoqembed .oembedall-summary{float:left;width:635px}.oembedall-stoqembed .oembedall-excerpt{line-height:1.2;margin:0;padding:0 0 5px}.oembedall-stoqembed .oembedall-tags{float:left;line-height:18px}.oembedall-stoqembed .oembedall-tags a:hover{text-decoration:none}.oembedall-stoqembed .oembedall-post-tag{background-color:#E0EAF1;border-bottom:1px solid #3E6D8E;border-right:1px solid #7F9FB6;color:#3E6D8E;font-size:90%;line-height:2.4;margin:2px 2px 2px 0;padding:3px 4px;text-decoration:none;white-space:nowrap}.oembedall-stoqembed .oembedall-post-tag:hover{background-color:#3E6D8E;border-bottom:1px solid #37607D;border-right:1px solid #37607D;color:#E0EAF1}.oembedall-stoqembed .oembedall-fr{float:right}.oembedall-stoqembed .oembedall-statsarrow{background-image:url(http://cdn.sstatic.net/stackoverflow/img/sprites.png?v=3);background-repeat:no-repeat;overflow:hidden;background-position:0 -435px;float:right;height:13px;margin-top:12px;width:7px}.oembedall-facebook1{border:1px solid #1A3C6C;padding:0;font:13.34px/1.4 verdana;width:500px}.oembedall-facebook2{background-color:#627add}.oembedall-facebook2 a{color:#e8e8e8;text-decoration:none}.oembedall-facebookBody{background-color:#fff;vertical-align:top;padding:5px}.oembedall-facebookBody .contents{display:inline-block;width:100%}.oembedall-facebookBody div img{float:left;margin-right:5px}div.oembedall-lanyard{-webkit-box-shadow:none;-webkit-transition-delay:0s;-webkit-transition-duration:.4000000059604645s;-webkit-transition-property:width;-webkit-transition-timing-function:cubic-bezier(0.42,0,.58,1);background-attachment:scroll;background-clip:border-box;background-color:transparent;background-image:none;background-origin:padding-box;border-width:0;box-shadow:none;color:#112644;display:block;float:left;font-family:'Trebuchet MS',Trebuchet,sans-serif;font-size:16px;height:253px;line-height:19px;margin:0;max-width:none;min-height:0;outline:#112644 0;overflow-x:visible;overflow-y:visible;padding:0;position:relative;text-align:left;vertical-align:baseline;width:804px}div.oembedall-lanyard .tagline{font-size:1.5em}div.oembedall-lanyard .wrapper{overflow:hidden;clear:both}div.oembedall-lanyard .split{float:left;display:inline}div.oembedall-lanyard .prominent-place .flag:active,div.oembedall-lanyard .prominent-place .flag:focus,div.oembedall-lanyard .prominent-place .flag:hover,div.oembedall-lanyard .prominent-place .flag:link,div.oembedall-lanyard .prominent-place .flag:visited{float:left;display:block;width:48px;height:48px;position:relative;top:-5px;margin-right:10px}div.oembedall-lanyard .place-context{font-size:.889em}div.oembedall-lanyard .prominent-place .sub-place{display:block}div.oembedall-lanyard .prominent-place{font-size:1.125em;line-height:1.1em;font-weight:400}div.oembedall-lanyard .main-date{color:#8CB4E0;font-weight:700;line-height:1.1}div.oembedall-lanyard .first{width:48.57%;margin:0 0 0 2.857%}.mermaid .label{color:#333}.node circle,.node polygon,.node rect{fill:#cde498;stroke:#13540c;stroke-width:1px}.edgePath .path{stroke:green;stroke-width:1.5px}.cluster rect{fill:#cdffb2;rx:40;stroke:#6eaa49;stroke-width:1px}.cluster text{fill:#333}.actor{stroke:#13540c;fill:#cde498}text.actor{fill:#000;stroke:none}.actor-line{stroke:grey}.messageLine0{stroke-width:1.5;stroke-dasharray:"2 2";marker-end:"url(#arrowhead)";stroke:#333}.messageLine1{stroke-width:1.5;stroke-dasharray:"2 2";stroke:#333}#arrowhead{fill:#333}#crosshead path{fill:#333!important;stroke:#333!important}.messageText{fill:#333;stroke:none}.labelBox{stroke:#326932;fill:#cde498}.labelText,.loopText{fill:#000;stroke:none}.loopLine{stroke-width:2;stroke-dasharray:"2 2";marker-end:"url(#arrowhead)";stroke:#326932}.note{stroke:#6eaa49;fill:#fff5ad}.noteText{fill:#000;stroke:none;font-family:'trebuchet ms',verdana,arial;font-size:14px}.section{stroke:none;opacity:.2}.section0,.section2{fill:#6eaa49}.section1,.section3{fill:#fff;opacity:.2}.sectionTitle0,.sectionTitle1,.sectionTitle2,.sectionTitle3{fill:#333}.sectionTitle{text-anchor:start;font-size:11px;text-height:14px}.grid .tick{stroke:lightgrey;opacity:.3;shape-rendering:crispEdges}.grid path{stroke-width:0}.today{fill:none;stroke:red;stroke-width:2px}.task{stroke-width:2}.taskText{text-anchor:middle;font-size:11px}.taskTextOutsideRight{fill:#000;text-anchor:start;font-size:11px}.taskTextOutsideLeft{fill:#000;text-anchor:end;font-size:11px}.taskText0,.taskText1,.taskText2,.taskText3{fill:#fff}.task0,.task1,.task2,.task3{fill:#487e3a;stroke:#13540c}.taskTextOutside0,.taskTextOutside1,.taskTextOutside2,.taskTextOutside3{fill:#000}.active0,.active1,.active2,.active3{fill:#cde498;stroke:#13540c}.activeText0,.activeText1,.activeText2,.activeText3{fill:#000!important}.done0,.done1,.done2,.done3{stroke:grey;fill:lightgrey;stroke-width:2}.doneText0,.doneText1,.doneText2,.doneText3{fill:#000!important}.crit0,.crit1,.crit2,.crit3{stroke:#f88;fill:red;stroke-width:2}.activeCrit0,.activeCrit1,.activeCrit2,.activeCrit3{stroke:#f88;fill:#cde498;stroke-width:2}.doneCrit0,.doneCrit1,.doneCrit2,.doneCrit3{stroke:#f88;fill:lightgrey;stroke-width:2;cursor:pointer;shape-rendering:crispEdges}.activeCritText0,.activeCritText1,.activeCritText2,.activeCritText3,.doneCritText0,.doneCritText1,.doneCritText2,.doneCritText3{fill:#000!important}.titleText{text-anchor:middle;font-size:18px;fill:#000}text{font-family:'trebuchet ms',verdana,arial;font-size:14px}html{height:100%}body{margin:0!important;padding:5px 20px 26px!important;background-color:#fff;font-family:"Lucida Grande","Segoe UI","Apple SD Gothic Neo","Malgun Gothic","Lucida Sans Unicode",Helvetica,Arial,sans-serif;font-size:.9em;overflow-x:hidden;overflow-y:auto}br,h1,h2,h3,h4,h5,h6{clear:both}hr.page{background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x;border:0;height:3px;padding:0}hr.underscore{border-top-style:dashed!important}body >:first-child{margin-top:0!important}img.plugin{box-shadow:0 1px 3px rgba(0,0,0,.1);border-radius:3px}iframe{border:0}figure{-webkit-margin-before:0;-webkit-margin-after:0;-webkit-margin-start:0;-webkit-margin-end:0}kbd{border:1px solid #aaa;-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px;-moz-box-shadow:1px 2px 2px #ddd;-webkit-box-shadow:1px 2px 2px #ddd;box-shadow:1px 2px 2px #ddd;background-color:#f9f9f9;background-image:-moz-linear-gradient(top,#eee,#f9f9f9,#eee);background-image:-o-linear-gradient(top,#eee,#f9f9f9,#eee);background-image:-webkit-linear-gradient(top,#eee,#f9f9f9,#eee);background-image:linear-gradient(top,#eee,#f9f9f9,#eee);padding:1px 3px;font-family:inherit;font-size:.85em}.oembeded .oembed_photo{display:inline-block}img[data-echo]{margin:25px 0;width:100px;height:100px;background:url(../img/ajax.gif) center center no-repeat #fff}.spinner{display:inline-block;width:10px;height:10px;margin-bottom:-.1em;border:2px solid rgba(0,0,0,.5);border-top-color:transparent;border-radius:100%;-webkit-animation:spin 1s infinite linear;animation:spin 1s infinite linear}.spinner:after{content:'';display:block;width:0;height:0;position:absolute;top:-6px;left:0;border:4px solid transparent;border-bottom-color:rgba(0,0,0,.5);-webkit-transform:rotate(45deg);transform:rotate(45deg)}@-webkit-keyframes spin{to{-webkit-transform:rotate(360deg)}}@keyframes spin{to{transform:rotate(360deg)}}p.toc{margin:0!important}p.toc ul{padding-left:10px}p.toc>ul{padding:10px;margin:0 10px;display:inline-block;border:1px solid #ededed;border-radius:5px}p.toc li,p.toc ul{list-style-type:none}p.toc li{width:100%;padding:0;overflow:hidden}p.toc li a::after{content:"."}p.toc li a:before{content:"• "}p.toc h5{text-transform:uppercase}p.toc .title{float:left;padding-right:3px}p.toc .number{margin:0;float:right;padding-left:3px;background:#fff;display:none}input.task-list-item{margin-left:-1.62em}.markdown{font-family:"Hiragino Sans GB","Microsoft YaHei",STHeiti,SimSun,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",'Segoe UI',AppleSDGothicNeo-Medium,'Malgun Gothic',Verdana,Tahoma,sans-serif;padding:20px}.markdown a{text-decoration:none;vertical-align:baseline}.markdown a:hover{text-decoration:underline}.markdown h1{font-size:2.2em;font-weight:700;margin:1.5em 0 1em}.markdown h2{font-size:1.8em;font-weight:700;margin:1.275em 0 .85em}.markdown h3{font-size:1.6em;font-weight:700;margin:1.125em 0 .75em}.markdown h4{font-size:1.4em;font-weight:700;margin:.99em 0 .66em}.markdown h5{font-size:1.2em;font-weight:700;margin:.855em 0 .57em}.markdown h6{font-size:1em;font-weight:700;margin:.75em 0 .5em}.markdown h1+p,.markdown h1:first-child,.markdown h2+p,.markdown h2:first-child,.markdown h3+p,.markdown h3:first-child,.markdown h4+p,.markdown h4:first-child,.markdown h5+p,.markdown h5:first-child,.markdown h6+p,.markdown h6:first-child{margin-top:0}.markdown hr{border:1px solid #ccc}.markdown p{margin:1em 0;word-wrap:break-word}.markdown ol{list-style-type:decimal}.markdown li{display:list-item;line-height:1.4em}.markdown blockquote{margin:1em 20px}.markdown blockquote>:first-child{margin-top:0}.markdown blockquote>:last-child{margin-bottom:0}.markdown blockquote cite:before{content:'\2014 \00A0'}.markdown .code{border-radius:3px;word-wrap:break-word}.markdown pre{border-radius:3px;word-wrap:break-word;border:1px solid #ccc;overflow:auto;padding:.5em}.markdown pre code{border:0;display:block}.markdown pre>code{font-family:Consolas,Inconsolata,Courier,monospace;font-weight:700;white-space:pre;margin:0}.markdown code{border-radius:3px;word-wrap:break-word;border:1px solid #ccc;padding:0 5px;margin:0 2px}.markdown img{max-width:100%}.markdown mark{color:#000;background-color:#fcf8e3}.markdown table{padding:0;border-collapse:collapse;border-spacing:0;margin-bottom:16px}.markdown table tr td,.markdown table tr th{border:1px solid #ccc;margin:0;padding:6px 13px}.markdown table tr th{font-weight:700}.markdown table tr th>:first-child{margin-top:0}.markdown table tr th>:last-child{margin-bottom:0}.markdown table tr td>:first-child{margin-top:0}.markdown table tr td>:last-child{margin-bottom:0}.github{padding:20px;font-family:"Helvetica Neue",Helvetica,"Hiragino Sans GB","Microsoft YaHei",STHeiti,SimSun,"Segoe UI",AppleSDGothicNeo-Medium,'Malgun Gothic',Arial,freesans,sans-serif;font-size:15px;background:#fff;line-height:1.6;-webkit-font-smoothing:antialiased}.github a{color:#3269a0}.github a:hover{color:#4183c4}.github h2{border-bottom:1px solid #e6e6e6;line-height:1.6}.github h6{color:#777}.github hr{border:1px solid #e6e6e6}.github pre>code{font-size:.9em;font-family:Consolas,Inconsolata,Courier,monospace}.github blockquote>code,.github h1>code,.github h2>code,.github h3>code,.github h4>code,.github h5>code,.github h6>code,.github li>code,.github p>code,.github td>code{background-color:rgba(0,0,0,.07);font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;font-size:85%;padding:.2em .5em;border:0}.github blockquote{border-left:4px solid #e6e6e6;padding:0 15px;font-style:italic}.github table{background-color:#fafafa}.github table tr td,.github table tr th{border:1px solid #e6e6e6}.github table tr:nth-child(2n){background-color:#f2f2f2}.hljs{display:block;overflow-x:auto;padding:.5em;background:#fff;color:#000;-webkit-text-size-adjust:none}.hljs-comment,.hljs-javadoc{color:#800}.hljs-keyword,.hljs-list .hljs-keyword,.hljs-request,.hljs-status,.hljs-tag .hljs-title,.hljs-winutils,.http .hljs-title,.method,.nginx .hljs-title,.setting .hljs-value,.tex .hljs-command{color:#008}.hljs-envvar,.tex .hljs-special{color:#660}.apache .hljs-cbracket,.coffeescript .hljs-attribute,.hljs-attr_selector,.hljs-cdata,.hljs-date,.hljs-filter .hljs-argument,.hljs-regexp,.hljs-string,.hljs-tag .hljs-value{color:#080}.clojure .hljs-attribute,.css .hljs-function,.hljs-decorator,.hljs-hexcolor,.hljs-literal,.hljs-number,.hljs-pi,.hljs-prompt,.hljs-rules .hljs-value,.hljs-shebang,.hljs-sub .hljs-identifier,.hljs-symbol,.hljs-tag,.hljs-tag .hljs-keyword,.ini .hljs-title,.ruby .hljs-symbol .hljs-string{color:#066}.hljs-built_in,.hljs-class .hljs-id,.hljs-class .hljs-title,.hljs-dartdoc,.hljs-doctype,.hljs-javadoctag,.hljs-params,.hljs-phpdoc,.hljs-tag .hljs-attribute,.hljs-type,.hljs-typename,.hljs-variable,.hljs-yardoctag,.setting,.smalltalk .hljs-class{color:#606}.css .hljs-tag,.hljs-pseudo,.hljs-rules .hljs-property,.hljs-subst{color:#000}.css .hljs-class,.css .hljs-id{color:#9b703f}.hljs-value .hljs-important{color:#f70;font-weight:700}.hljs-rules .hljs-keyword{color:#c5af75}.apache .hljs-sqbracket,.hljs-annotation,.nginx .hljs-built_in{color:#9b859d}.hljs-pragma,.hljs-preprocessor,.hljs-preprocessor *{color:#444}.tex .hljs-formula{background-color:#eee;font-style:italic}.diff .hljs-header,.hljs-chunk{color:gray;font-weight:700}.diff .hljs-change{background-color:#bccff9}.hljs-addition{background-color:#baeeba}.hljs-deletion{background-color:#ffc8bd}.hljs-comment .hljs-yardoctag{font-weight:700}.MathJax_Hover_Frame{border-radius:.25em;-webkit-border-radius:.25em;-moz-border-radius:.25em;-khtml-border-radius:.25em;box-shadow:0 0 15px #83A;-webkit-box-shadow:0 0 15px #83A;-moz-box-shadow:0 0 15px #83A;-khtml-box-shadow:0 0 15px #83A;border:1px solid #A6D!important;display:inline-block;position:absolute}.MathJax_Hover_Arrow{position:absolute;width:15px;height:11px;cursor:pointer}#MathJax_About{position:fixed;left:50%;width:auto;text-align:center;border:3px outset;padding:1em 2em;background-color:#DDD;color:#000;cursor:default;font-family:message-box;font-size:120%;font-style:normal;text-indent:0;text-transform:none;line-height:normal;letter-spacing:normal;word-spacing:normal;word-wrap:normal;white-space:nowrap;float:none;z-index:201;border-radius:15px;-webkit-border-radius:15px;-moz-border-radius:15px;-khtml-border-radius:15px;box-shadow:0 10px 20px gray;-webkit-box-shadow:0 10px 20px gray;-moz-box-shadow:0 10px 20px gray;-khtml-box-shadow:0 10px 20px gray;filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}.MathJax_Menu{position:absolute;background-color:#fff;color:#000;width:auto;padding:5px 0;border:1px solid #CCC;margin:0;cursor:default;font:menu;text-align:left;text-indent:0;text-transform:none;line-height:normal;letter-spacing:normal;word-spacing:normal;word-wrap:normal;white-space:nowrap;float:none;z-index:201;border-radius:5px;-webkit-border-radius:5px;-moz-border-radius:5px;-khtml-border-radius:5px;box-shadow:0 10px 20px gray;-webkit-box-shadow:0 10px 20px gray;-moz-box-shadow:0 10px 20px gray;-khtml-box-shadow:0 10px 20px gray;filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}.MathJax_MenuItem{padding:1px 2em;background:0 0}.MathJax_MenuArrow{position:absolute;right:.5em;color:#666}.MathJax_MenuActive .MathJax_MenuArrow{color:#fff}.MathJax_MenuArrow.RTL{left:.5em;right:auto}.MathJax_MenuCheck{position:absolute;left:.7em}.MathJax_MenuCheck.RTL{right:.7em;left:auto}.MathJax_MenuRadioCheck{position:absolute;left:.7em}.MathJax_MenuRadioCheck.RTL{right:.7em;left:auto}.MathJax_MenuLabel{padding:1px 2em 3px 1.33em;font-style:italic}.MathJax_MenuRule{border-top:1px solid #DDD;margin:4px 3px}.MathJax_MenuDisabled{color:GrayText}.MathJax_MenuActive{background-color:#606872;color:#fff}.MathJax_Menu_Close{position:absolute;width:31px;height:31px;top:-15px;left:-15px}#MathJax_Zoom{position:absolute;background-color:#F0F0F0;overflow:auto;display:block;z-index:301;padding:.5em;border:1px solid #000;margin:0;font-weight:400;font-style:normal;text-align:left;text-indent:0;text-transform:none;line-height:normal;letter-spacing:normal;word-spacing:normal;word-wrap:normal;white-space:nowrap;float:none;box-shadow:5px 5px 15px #AAA;-webkit-box-shadow:5px 5px 15px #AAA;-moz-box-shadow:5px 5px 15px #AAA;-khtml-box-shadow:5px 5px 15px #AAA;filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}#MathJax_ZoomOverlay{position:absolute;left:0;top:0;z-index:300;display:inline-block;width:100%;height:100%;border:0;padding:0;margin:0;background-color:#fff;opacity:0;filter:alpha(opacity=0)}#MathJax_ZoomFrame{position:relative;display:inline-block;height:0;width:0}#MathJax_ZoomEventTrap{position:absolute;left:0;top:0;z-index:302;display:inline-block;border:0;padding:0;margin:0;background-color:#fff;opacity:0;filter:alpha(opacity=0)}.MathJax_Preview{color:#888}#MathJax_Message{position:fixed;left:1px;bottom:2px;background-color:#E6E6E6;border:1px solid #959595;margin:0;padding:2px 8px;z-index:102;color:#000;font-size:80%;width:auto;white-space:nowrap}#MathJax_MSIE_Frame{position:absolute;top:0;left:0;width:0;z-index:101;border:0;margin:0;padding:0}.MathJax_Error{color:#C00;font-style:italic}.MathJax_Display{text-align:center;margin:1em 0;position:relative;display:block!important;text-indent:0;max-width:none;max-height:none;min-width:0;min-height:0;width:100%}.MathJax .merror{background-color:#FF8;color:#C00;border:1px solid #C00;padding:1px 3px;font-style:normal;font-size:90%}.MathJax .MJX-monospace{font-family:monospace}.MathJax .MJX-sans-serif{font-family:sans-serif}#MathJax_Tooltip{background-color:InfoBackground;color:InfoText;border:1px solid #000;box-shadow:2px 2px 5px #AAA;-webkit-box-shadow:2px 2px 5px #AAA;-moz-box-shadow:2px 2px 5px #AAA;-khtml-box-shadow:2px 2px 5px #AAA;filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true');padding:3px 4px;z-index:401;position:absolute;left:0;top:0;width:auto;height:auto;display:none}.MathJax{display:inline;font-style:normal;font-weight:400;line-height:normal;font-size:100%;font-size-adjust:none;text-indent:0;text-align:left;text-transform:none;letter-spacing:normal;word-spacing:normal;word-wrap:normal;white-space:nowrap;float:none;direction:ltr;max-width:none;max-height:none;min-width:0;min-height:0;border:0;padding:0;margin:0}.MathJax a,.MathJax img,.MathJax nobr{border:0;padding:0;margin:0;max-width:5000em;max-height:5000em;min-width:0;min-height:0;vertical-align:0;line-height:normal;text-decoration:none}img.MathJax_strut{border:0!important;padding:0!important;margin:0!important;vertical-align:0!important}.MathJax span{display:inline;position:static;border:0;padding:0;margin:0;vertical-align:0;line-height:normal;text-decoration:none}.MathJax nobr{white-space:nowrap!important}.MathJax img{display:inline!important;float:none!important}.MathJax *{transition:none;-webkit-transition:none;-moz-transition:none;-ms-transition:none;-o-transition:none}.MathJax_Processing{visibility:hidden;position:fixed;width:0;height:0;overflow:hidden}.MathJax_Processed{display:none!important}.MathJax_ExBox{display:block!important;overflow:hidden;width:1px;height:60ex;min-height:0;max-height:none}.MathJax .MathJax_EmBox{display:block!important;overflow:hidden;width:1px;height:60em;min-height:0;max-height:none}.MathJax .MathJax_HitBox{cursor:text;background:#fff;opacity:0;filter:alpha(opacity=0)}#MathJax_Tooltip *,.MathJax .MathJax_HitBox *{filter:none;opacity:1;background:0 0}@font-face{font-family:MathJax_Blank;src:url(about:blank)}.MathJax .noError{font-size:90%;text-align:left;color:#000;padding:1px 3px;border:1px solid}footer{position:fixed;font-size:.8em;text-align:right;bottom:0;margin-left:-25px;height:20px;width:100%}</style>
+</head>
+<body class="markdown github">
+<h3 id="_laboratorium-3._"><a name="_laboratorium-3._" href="https://upel2.cel.agh.edu.pl/wiet/pluginfile.php/97507/mod_resource/content/2/fp-lab3.html#_laboratorium-3._"></a><em>Laboratorium 3.</em></h3><h5 id="0)-przygotowanie-środowiska"><a name="0)-przygotowanie-środowiska" href="https://upel2.cel.agh.edu.pl/wiet/pluginfile.php/97507/mod_resource/content/2/fp-lab3.html#0)-przygotowanie-%C5%9Brodowiska"></a>0) Przygotowanie środowiska</h5><p>W konsoli/terminalu wpisujemy kolejno</p><pre class="bash hljs"><code class="bash" data-origin="&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;$ cd
+$ mkdir haskell-lab3
+$ cd haskell-lab3
+&lt;/code&gt;&lt;/pre&gt;">$ <span class="hljs-built_in">cd</span>
+$ mkdir haskell-lab3
+$ <span class="hljs-built_in">cd</span> haskell-lab3
+</code></pre><h5 id="1)-funkcje-anonimowe-i-_currying_"><a name="1)-funkcje-anonimowe-i-_currying_" href="https://upel2.cel.agh.edu.pl/wiet/pluginfile.php/97507/mod_resource/content/2/fp-lab3.html#1)-funkcje-anonimowe-i-_currying_"></a>1) Funkcje anonimowe i <em>currying</em></h5><ol>
+<li><p>W konsoli GHCi wpisujemy kolejno</p>
+<pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;ghci&amp;gt; :t (\x -&amp;gt; \y -&amp;gt; x + y)
+ghci&amp;gt; :t (\x y -&amp;gt; x + y) -- porównujemy wynik z poprzednim
+
+ghci&amp;gt; :t (\x -&amp;gt; \y -&amp;gt; x + y) 1
+ghci&amp;gt; :t (\x y -&amp;gt; x + y) 1 -- porównujemy wynik z poprzednim
+
+ghci&amp;gt; :t (\x -&amp;gt; \y -&amp;gt; x + y) 1 2
+ghci&amp;gt; :t (\x y -&amp;gt; x + y) 1 2 -- porównujemy wynik z poprzednim
+
+ghci&amp;gt; (\x -&amp;gt; \y -&amp;gt; x + y) 1 2
+ghci&amp;gt; (\x y -&amp;gt; x + y) 1 2 -- porównujemy wynik z poprzednim
+
+ghci&amp;gt; let f1 = \x -&amp;gt; \y -&amp;gt; x + y
+ghci&amp;gt; :t f1
+ghci&amp;gt; f1 1 2
+
+ghci&amp;gt; let f2 = \x y -&amp;gt; x + y
+ghci&amp;gt; :t f2 -- porównujemy z wynikiem dla f1
+ghci&amp;gt; f2 1 2 -- porównujemy z wynikiem dla f1
+
+ghci&amp;gt; let f3 x = \y -&amp;gt; x + y
+ghci&amp;gt; :t f3 -- porównujemy z wynikami dla f1 i f2
+ghci&amp;gt; f3 1 2 -- porównujemy z wynikami dla f1 i f2
+
+ghci&amp;gt; let f4 x y = x + y
+ghci&amp;gt; :t f4 -- porównujemy z wynikami dla f1, f2 i f3
+ghci&amp;gt; f4 1 2 -- porównujemy z wynikami dla f1, f2 i f3
+
+ghci&amp;gt; let f5 = \(x,y) -&amp;gt; x + y
+ghci&amp;gt; :t f5 -- porównujemy z wynikami dla f1, ... , f4
+ghci&amp;gt; f5 1
+ghci&amp;gt; f5 (1,2) -- porównujemy z wynikami dla f1, ... , f4
+
+ghci&amp;gt; let f6 (x,y) = x + y
+ghci&amp;gt; :t f6 -- porównujemy z wynikami dla f1, ... , f5
+ghci&amp;gt; f6 1
+ghci&amp;gt; f6 (1,2) -- porównujemy z wynikami dla f1, ... , f5
+
+ghci&amp;gt; :t (\x y -&amp;gt; x + y) :: Int -&amp;gt; Int -&amp;gt; Int
+ghci&amp;gt; :t (\x y -&amp;gt; x + y)
+ghci&amp;gt; ((\x y -&amp;gt; x + y) :: Int -&amp;gt; Int -&amp;gt; Int) 1 2
+&lt;/code&gt;&lt;/pre&gt;"><span class="hljs-title">ghci</span>&gt; :t (\x -&gt; \y -&gt; x + y)
+<span class="hljs-title">ghci</span>&gt; :t (\x y -&gt; x + y) <span class="hljs-comment">-- porównujemy wynik z poprzednim</span>
+
+<span class="hljs-title">ghci</span>&gt; :t (\x -&gt; \y -&gt; x + y) <span class="hljs-number">1</span>
+<span class="hljs-title">ghci</span>&gt; :t (\x y -&gt; x + y) <span class="hljs-number">1</span> <span class="hljs-comment">-- porównujemy wynik z poprzednim</span>
+
+<span class="hljs-title">ghci</span>&gt; :t (\x -&gt; \y -&gt; x + y) <span class="hljs-number">1</span> <span class="hljs-number">2</span>
+<span class="hljs-title">ghci</span>&gt; :t (\x y -&gt; x + y) <span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-comment">-- porównujemy wynik z poprzednim</span>
+
+<span class="hljs-title">ghci</span>&gt; (\x -&gt; \y -&gt; x + y) <span class="hljs-number">1</span> <span class="hljs-number">2</span>
+<span class="hljs-title">ghci</span>&gt; (\x y -&gt; x + y) <span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-comment">-- porównujemy wynik z poprzednim</span>
+
+<span class="hljs-title">ghci</span>&gt; <span class="hljs-keyword">let</span> f1 = \x -&gt; \y -&gt; x + y
+<span class="hljs-title">ghci</span>&gt; :t f1
+<span class="hljs-title">ghci</span>&gt; f1 <span class="hljs-number">1</span> <span class="hljs-number">2</span>
+
+<span class="hljs-title">ghci</span>&gt; <span class="hljs-keyword">let</span> f2 = \x y -&gt; x + y
+<span class="hljs-title">ghci</span>&gt; :t f2 <span class="hljs-comment">-- porównujemy z wynikiem dla f1</span>
+<span class="hljs-title">ghci</span>&gt; f2 <span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-comment">-- porównujemy z wynikiem dla f1</span>
+
+<span class="hljs-title">ghci</span>&gt; <span class="hljs-keyword">let</span> f3 x = \y -&gt; x + y
+<span class="hljs-title">ghci</span>&gt; :t f3 <span class="hljs-comment">-- porównujemy z wynikami dla f1 i f2</span>
+<span class="hljs-title">ghci</span>&gt; f3 <span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-comment">-- porównujemy z wynikami dla f1 i f2</span>
+
+<span class="hljs-title">ghci</span>&gt; <span class="hljs-keyword">let</span> f4 x y = x + y
+<span class="hljs-title">ghci</span>&gt; :t f4 <span class="hljs-comment">-- porównujemy z wynikami dla f1, f2 i f3</span>
+<span class="hljs-title">ghci</span>&gt; f4 <span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-comment">-- porównujemy z wynikami dla f1, f2 i f3</span>
+
+<span class="hljs-title">ghci</span>&gt; <span class="hljs-keyword">let</span> f5 = \(x,y) -&gt; x + y
+<span class="hljs-title">ghci</span>&gt; :t f5 <span class="hljs-comment">-- porównujemy z wynikami dla f1, ... , f4</span>
+<span class="hljs-title">ghci</span>&gt; f5 <span class="hljs-number">1</span>
+<span class="hljs-title">ghci</span>&gt; f5 (<span class="hljs-number">1</span>,<span class="hljs-number">2</span>) <span class="hljs-comment">-- porównujemy z wynikami dla f1, ... , f4</span>
+
+<span class="hljs-title">ghci</span>&gt; <span class="hljs-keyword">let</span> f6 (x,y) = x + y
+<span class="hljs-title">ghci</span>&gt; :t f6 <span class="hljs-comment">-- porównujemy z wynikami dla f1, ... , f5</span>
+<span class="hljs-title">ghci</span>&gt; f6 <span class="hljs-number">1</span>
+<span class="hljs-title">ghci</span>&gt; f6 (<span class="hljs-number">1</span>,<span class="hljs-number">2</span>) <span class="hljs-comment">-- porównujemy z wynikami dla f1, ... , f5</span>
+
+<span class="hljs-title">ghci</span>&gt; :t (\x y -&gt; x + y) :: <span class="hljs-type">Int</span> -&gt; <span class="hljs-type">Int</span> -&gt; <span class="hljs-type">Int</span>
+<span class="hljs-title">ghci</span>&gt; :t (\x y -&gt; x + y)
+<span class="hljs-title">ghci</span>&gt; ((\x y -&gt; x + y) :: <span class="hljs-type">Int</span> -&gt; <span class="hljs-type">Int</span> -&gt; <span class="hljs-type">Int</span>) <span class="hljs-number">1</span> <span class="hljs-number">2</span>
+</code></pre>
+</li><li><p><strong><em>Zadania</em></strong>:</p>
+<ol>
+<li><p>Napisać funkcje anonimowe (wyrażenia lambda) odpowiadające:</p>
+<ul>
+<li><p><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-1-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-1" style="width: 10.017em; display: inline-block;"><span style="display: inline-block; position: relative; width: 8.333em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.655em 1000em 2.909em -0.647em); top: -2.5em; left: 0em;"><span class="mrow" id="MathJax-Span-2"><span class="msubsup" id="MathJax-Span-3"><span style="display: inline-block; position: relative; width: 0.762em; height: 0px;"><span style="position: absolute; clip: rect(1.655em 1000em 2.874em -0.647em); top: -2.5em; left: 0em;"><span class="mi" id="MathJax-Span-4" style="font-family: STIXGeneral-Italic;">f<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.146em;"></span></span><span style="display: inline-block; width: 0px; height: 2.5em;"></span></span><span style="position: absolute; top: -2.035em; left: 0.298em;"><span class="mn" id="MathJax-Span-5" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">1</span><span style="display: inline-block; width: 0px; height: 2.278em;"></span></span></span></span><span class="mo" id="MathJax-Span-6" style="font-family: STIXGeneral-Regular;">(</span><span class="mi" id="MathJax-Span-7" style="font-family: STIXGeneral-Italic;">x<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mo" id="MathJax-Span-8" style="font-family: STIXGeneral-Regular;">)</span><span class="mo" id="MathJax-Span-9" style="font-family: STIXGeneral-Regular; padding-left: 0.313em;">=</span><span class="mi" id="MathJax-Span-10" style="font-family: STIXGeneral-Italic; padding-left: 0.313em;">x<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mo" id="MathJax-Span-11" style="font-family: STIXGeneral-Regular; padding-left: 0.25em;">−</span><span class="mn" id="MathJax-Span-12" style="font-family: STIXGeneral-Regular; padding-left: 0.25em;">2</span><span class="mo" id="MathJax-Span-13" style="font-family: STIXGeneral-Regular;">;</span><span class="mtext" id="MathJax-Span-14" style="font-family: STIXGeneral-Regular; padding-left: 0.188em;">&nbsp;</span><span class="mi" id="MathJax-Span-15" style="font-family: STIXGeneral-Italic;">x<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mo" id="MathJax-Span-16" style="font-family: STIXGeneral-Regular; padding-left: 0.313em;">∈</span><span class="texatom" id="MathJax-Span-17" style="padding-left: 0.313em;"><span class="mrow" id="MathJax-Span-18"><span class="mi" id="MathJax-Span-19" style="font-family: STIXGeneral-Regular;">ℝ</span></span></span></span><span style="display: inline-block; width: 0px; height: 2.5em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 1.238em; vertical-align: -0.357em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-1">f_1(x) = x - 2; \ x \in \mathbb{R}</script></p></li><li><p><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-2-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-20" style="width: 15.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 12.667em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.45em 1000em 3.025em -0.647em); top: -2.5em; left: 0em;"><span class="mrow" id="MathJax-Span-21"><span class="msubsup" id="MathJax-Span-22"><span style="display: inline-block; position: relative; width: 0.762em; height: 0px;"><span style="position: absolute; clip: rect(1.655em 1000em 2.874em -0.647em); top: -2.5em; left: 0em;"><span class="mi" id="MathJax-Span-23" style="font-family: STIXGeneral-Italic;">f<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.146em;"></span></span><span style="display: inline-block; width: 0px; height: 2.5em;"></span></span><span style="position: absolute; top: -2.035em; left: 0.298em;"><span class="mn" id="MathJax-Span-24" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">2</span><span style="display: inline-block; width: 0px; height: 2.278em;"></span></span></span></span><span class="mo" id="MathJax-Span-25" style="font-family: STIXGeneral-Regular;">(</span><span class="mi" id="MathJax-Span-26" style="font-family: STIXGeneral-Italic;">x<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mo" id="MathJax-Span-27" style="font-family: STIXGeneral-Regular;">,</span><span class="mi" id="MathJax-Span-28" style="font-family: STIXGeneral-Italic; padding-left: 0.188em;">y</span><span class="mo" id="MathJax-Span-29" style="font-family: STIXGeneral-Regular;">)</span><span class="mo" id="MathJax-Span-30" style="font-family: STIXGeneral-Regular; padding-left: 0.313em;">=</span><span class="msqrt" id="MathJax-Span-31" style="padding-left: 0.313em;"><span style="display: inline-block; position: relative; width: 1.278em; height: 0px;"><span style="position: absolute; clip: rect(1.657em 1000em 2.844em -0.452em); top: -2.5em; left: 0.944em;"><span class="mrow" id="MathJax-Span-32"><span class="mo" id="MathJax-Span-33" style="font-family: STIXGeneral-Regular;">(</span></span><span style="display: inline-block; width: 0px; height: 2.5em;"></span></span><span style="position: absolute; clip: rect(0.889em 1000em 1.292em -0.5em); top: -1.939em; left: 0.944em;"><span style="border-left-width: 0.333em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 1.25px; vertical-align: -0.069em;"></span><span style="display: inline-block; width: 0px; height: 1.056em;"></span></span><span style="position: absolute; clip: rect(2.86em 1000em 4.426em -0.388em); top: -3.9em; left: 0em;"><span style="font-family: STIXGeneral-Regular;">√</span><span style="display: inline-block; width: 0px; height: 4em;"></span></span></span></span><span class="msubsup" id="MathJax-Span-34"><span style="display: inline-block; position: relative; width: 1.015em; height: 0px;"><span style="position: absolute; clip: rect(1.892em 1000em 2.678em -0.527em); top: -2.5em; left: 0em;"><span class="mi" id="MathJax-Span-35" style="font-family: STIXGeneral-Italic;">x<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span style="display: inline-block; width: 0px; height: 2.5em;"></span></span><span style="position: absolute; top: -2.641em; left: 0.551em;"><span class="mn" id="MathJax-Span-36" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">2</span><span style="display: inline-block; width: 0px; height: 2.278em;"></span></span></span></span><span class="mo" id="MathJax-Span-37" style="font-family: STIXGeneral-Regular; padding-left: 0.25em;">+</span><span class="msubsup" id="MathJax-Span-38" style="padding-left: 0.25em;"><span style="display: inline-block; position: relative; width: 0.908em; height: 0px;"><span style="position: absolute; clip: rect(1.892em 1000em 2.873em -0.524em); top: -2.5em; left: 0em;"><span class="mi" id="MathJax-Span-39" style="font-family: STIXGeneral-Italic;">y</span><span style="display: inline-block; width: 0px; height: 2.5em;"></span></span><span style="position: absolute; top: -2.641em; left: 0.444em;"><span class="mn" id="MathJax-Span-40" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">2</span><span style="display: inline-block; width: 0px; height: 2.278em;"></span></span></span></span><span class="mo" id="MathJax-Span-41" style="font-family: STIXGeneral-Regular;">)</span><span class="mo" id="MathJax-Span-42" style="font-family: STIXGeneral-Regular;">;</span><span class="mtext" id="MathJax-Span-43" style="font-family: STIXGeneral-Regular; padding-left: 0.188em;">&nbsp;</span><span class="mi" id="MathJax-Span-44" style="font-family: STIXGeneral-Italic;">x<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mo" id="MathJax-Span-45" style="font-family: STIXGeneral-Regular;">,</span><span class="mi" id="MathJax-Span-46" style="font-family: STIXGeneral-Italic; padding-left: 0.188em;">y</span><span class="mo" id="MathJax-Span-47" style="font-family: STIXGeneral-Regular; padding-left: 0.313em;">∈</span><span class="texatom" id="MathJax-Span-48" style="padding-left: 0.313em;"><span class="mrow" id="MathJax-Span-49"><span class="mi" id="MathJax-Span-50" style="font-family: STIXGeneral-Regular;">ℝ</span></span></span></span><span style="display: inline-block; width: 0px; height: 2.5em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 1.623em; vertical-align: -0.497em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-2">f_2(x,y) = \sqrt(x^2 + y^2); \ x, y \in \mathbb{R}</script></p></li><li><p><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-3-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-51" style="width: 19.55em; display: inline-block;"><span style="display: inline-block; position: relative; width: 16.278em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.45em 1000em 3.025em -0.647em); top: -2.5em; left: 0em;"><span class="mrow" id="MathJax-Span-52"><span class="msubsup" id="MathJax-Span-53"><span style="display: inline-block; position: relative; width: 0.762em; height: 0px;"><span style="position: absolute; clip: rect(1.655em 1000em 2.874em -0.647em); top: -2.5em; left: 0em;"><span class="mi" id="MathJax-Span-54" style="font-family: STIXGeneral-Italic;">f<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.146em;"></span></span><span style="display: inline-block; width: 0px; height: 2.5em;"></span></span><span style="position: absolute; top: -2.035em; left: 0.298em;"><span class="mn" id="MathJax-Span-55" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">3</span><span style="display: inline-block; width: 0px; height: 2.278em;"></span></span></span></span><span class="mo" id="MathJax-Span-56" style="font-family: STIXGeneral-Regular;">(</span><span class="mi" id="MathJax-Span-57" style="font-family: STIXGeneral-Italic;">x<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mo" id="MathJax-Span-58" style="font-family: STIXGeneral-Regular;">,</span><span class="mi" id="MathJax-Span-59" style="font-family: STIXGeneral-Italic; padding-left: 0.188em;">y</span><span class="mo" id="MathJax-Span-60" style="font-family: STIXGeneral-Regular;">,</span><span class="mi" id="MathJax-Span-61" style="font-family: STIXGeneral-Italic; padding-left: 0.188em;">z</span><span class="mo" id="MathJax-Span-62" style="font-family: STIXGeneral-Regular;">)</span><span class="mo" id="MathJax-Span-63" style="font-family: STIXGeneral-Regular; padding-left: 0.313em;">=</span><span class="msqrt" id="MathJax-Span-64" style="padding-left: 0.313em;"><span style="display: inline-block; position: relative; width: 1.278em; height: 0px;"><span style="position: absolute; clip: rect(1.657em 1000em 2.844em -0.452em); top: -2.5em; left: 0.944em;"><span class="mrow" id="MathJax-Span-65"><span class="mo" id="MathJax-Span-66" style="font-family: STIXGeneral-Regular;">(</span></span><span style="display: inline-block; width: 0px; height: 2.5em;"></span></span><span style="position: absolute; clip: rect(0.889em 1000em 1.292em -0.5em); top: -1.939em; left: 0.944em;"><span style="border-left-width: 0.333em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 1.25px; vertical-align: -0.069em;"></span><span style="display: inline-block; width: 0px; height: 1.056em;"></span></span><span style="position: absolute; clip: rect(2.86em 1000em 4.426em -0.388em); top: -3.9em; left: 0em;"><span style="font-family: STIXGeneral-Regular;">√</span><span style="display: inline-block; width: 0px; height: 4em;"></span></span></span></span><span class="msubsup" id="MathJax-Span-67"><span style="display: inline-block; position: relative; width: 1.015em; height: 0px;"><span style="position: absolute; clip: rect(1.892em 1000em 2.678em -0.527em); top: -2.5em; left: 0em;"><span class="mi" id="MathJax-Span-68" style="font-family: STIXGeneral-Italic;">x<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span style="display: inline-block; width: 0px; height: 2.5em;"></span></span><span style="position: absolute; top: -2.641em; left: 0.551em;"><span class="mn" id="MathJax-Span-69" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">2</span><span style="display: inline-block; width: 0px; height: 2.278em;"></span></span></span></span><span class="mo" id="MathJax-Span-70" style="font-family: STIXGeneral-Regular; padding-left: 0.25em;">+</span><span class="msubsup" id="MathJax-Span-71" style="padding-left: 0.25em;"><span style="display: inline-block; position: relative; width: 0.908em; height: 0px;"><span style="position: absolute; clip: rect(1.892em 1000em 2.873em -0.524em); top: -2.5em; left: 0em;"><span class="mi" id="MathJax-Span-72" style="font-family: STIXGeneral-Italic;">y</span><span style="display: inline-block; width: 0px; height: 2.5em;"></span></span><span style="position: absolute; top: -2.641em; left: 0.444em;"><span class="mn" id="MathJax-Span-73" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">2</span><span style="display: inline-block; width: 0px; height: 2.278em;"></span></span></span></span><span class="mo" id="MathJax-Span-74" style="font-family: STIXGeneral-Regular; padding-left: 0.25em;">+</span><span class="msubsup" id="MathJax-Span-75" style="padding-left: 0.25em;"><span style="display: inline-block; position: relative; width: 0.908em; height: 0px;"><span style="position: absolute; clip: rect(1.905em 1000em 2.748em -0.502em); top: -2.5em; left: 0em;"><span class="mi" id="MathJax-Span-76" style="font-family: STIXGeneral-Italic;">z</span><span style="display: inline-block; width: 0px; height: 2.5em;"></span></span><span style="position: absolute; top: -2.641em; left: 0.444em;"><span class="mn" id="MathJax-Span-77" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">2</span><span style="display: inline-block; width: 0px; height: 2.278em;"></span></span></span></span><span class="mo" id="MathJax-Span-78" style="font-family: STIXGeneral-Regular;">)</span><span class="mo" id="MathJax-Span-79" style="font-family: STIXGeneral-Regular;">;</span><span class="mtext" id="MathJax-Span-80" style="font-family: STIXGeneral-Regular; padding-left: 0.188em;">&nbsp;</span><span class="mi" id="MathJax-Span-81" style="font-family: STIXGeneral-Italic;">x<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mo" id="MathJax-Span-82" style="font-family: STIXGeneral-Regular;">,</span><span class="mi" id="MathJax-Span-83" style="font-family: STIXGeneral-Italic; padding-left: 0.188em;">y</span><span class="mo" id="MathJax-Span-84" style="font-family: STIXGeneral-Regular;">,</span><span class="mi" id="MathJax-Span-85" style="font-family: STIXGeneral-Italic; padding-left: 0.188em;">z</span><span class="mo" id="MathJax-Span-86" style="font-family: STIXGeneral-Regular; padding-left: 0.313em;">∈</span><span class="texatom" id="MathJax-Span-87" style="padding-left: 0.313em;"><span class="mrow" id="MathJax-Span-88"><span class="mi" id="MathJax-Span-89" style="font-family: STIXGeneral-Regular;">ℤ</span></span></span></span><span style="display: inline-block; width: 0px; height: 2.5em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 1.623em; vertical-align: -0.497em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-3">f_3(x,y,z) = \sqrt(x^2 + y^2 + z^2); \ x, y, z \in \mathbb{Z}</script></p></li></ul>
+<p><em>Uwaga</em>: Sprawdzić działanie dla wybranych wartości argumentów</p>
+</li><li>Napisać funkcje anonimowe (wyrażenia lambda) odpowiadające:<pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;(2*), (*2), (2^), (^2), (2/), (/3), (4-)
+&lt;/code&gt;&lt;/pre&gt;">(<span class="hljs-number">2</span>*), (*<span class="hljs-number">2</span>), (<span class="hljs-number">2</span>^), (^<span class="hljs-number">2</span>), (<span class="hljs-number">2</span>/), (/<span class="hljs-number">3</span>), (<span class="hljs-number">4</span>-)
+</code></pre>
+<em>Uwaga</em>: jw.</li><li>(<em>opcjonalne</em>) Napisać funkcje anonimowe (wyrażenia lambda) odpowiadające:<pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;sqrt, abs, log, id, const
+&lt;/code&gt;&lt;/pre&gt;"><span class="hljs-title">sqrt</span>, abs, log, id, const
+</code></pre>
+<em>Uwaga</em>: jw.</li><li><p>Npisać funkcje anonimowe (wyrażenia lambda) odpowiadające:</p>
+<pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;f7 x = if x `mod` 2 == 0 then True else False
+
+f8 x = let y = sqrt x in 2 * y^3 * (y + 1)
+
+f9 1 = 3
+f9 _ = 0
+&lt;/code&gt;&lt;/pre&gt;"><span class="hljs-title">f7</span> x = <span class="hljs-keyword">if</span> x `mod` <span class="hljs-number">2</span> == <span class="hljs-number">0</span> <span class="hljs-keyword">then</span> <span class="hljs-type">True</span> <span class="hljs-keyword">else</span> <span class="hljs-type">False</span>
+
+<span class="hljs-title">f8</span> x = <span class="hljs-keyword">let</span> y = sqrt x <span class="hljs-keyword">in</span> <span class="hljs-number">2</span> * y^<span class="hljs-number">3</span> * (y + <span class="hljs-number">1</span>)
+
+<span class="hljs-title">f9</span> <span class="hljs-number">1</span> = <span class="hljs-number">3</span>
+<span class="hljs-title">f9</span> _ = <span class="hljs-number">0</span>
+</code></pre>
+<p><em>Uwaga</em>: jw.</p>
+</li></ol>
+</li></ol><h5 id="2)-funkcje-wyższego-rzędu:-funkcje-jako-parametry/argumenty"><a name="2)-funkcje-wyższego-rzędu:-funkcje-jako-parametry/argumenty" href="https://upel2.cel.agh.edu.pl/wiet/pluginfile.php/97507/mod_resource/content/2/fp-lab3.html#2)-funkcje-wy%C5%BCszego-rz%C4%99du:-funkcje-jako-parametry/argumenty"></a>2) Funkcje wyższego rzędu: funkcje jako parametry/argumenty</h5><ol>
+<li>W pliku ex2.hs wpisujemy<pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;sum&#39; :: Num a =&amp;gt; [a] -&amp;gt; a
+sum&#39; []     = 0
+sum&#39; (x:xs) = x + sum&#39; xs
+&lt;/code&gt;&lt;/pre&gt;"><span class="hljs-title">sum'</span> :: <span class="hljs-type">Num</span> a =&gt; [a] -&gt; a
+<span class="hljs-title">sum'</span> []     = <span class="hljs-number">0</span>
+<span class="hljs-title">sum'</span> (x:xs) = x + sum' xs
+</code></pre>
+zapisujemy zmiany i sprawdzamy działanie funkcji</li><li><strong><em>Zadania</em></strong>:<ol>
+<li>Na podstawie powyższej definicji napisać funkcję <code>sumSqr'</code> (sumującą kwadraty elementów listy)</li><li>Zdefiniować funkcję<pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;sumWith :: Num a =&amp;gt; (a -&amp;gt; a) -&amp;gt; [a] -&amp;gt; a
+sumWith f ...
+&lt;/code&gt;&lt;/pre&gt;"><span class="hljs-title">sumWith</span> :: <span class="hljs-type">Num</span> a =&gt; (a -&gt; a) -&gt; [a] -&gt; a
+<span class="hljs-title">sumWith</span> f ...
+</code></pre>
+uogólniającą <code>sum</code> i <code>sumSqr'</code></li><li>Wykorzystując funkcję <code>sumWith</code> zdefiniować<pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;sum     = sumWith ...
+sumSqr  = sumWith ...
+sumCube = sumWith ...
+sumAbs  = sumWith ...
+&lt;/code&gt;&lt;/pre&gt;"><span class="hljs-title">sum</span>     = sumWith ...
+<span class="hljs-title">sumSqr</span>  = sumWith ...
+<span class="hljs-title">sumCube</span> = sumWith ...
+<span class="hljs-title">sumAbs</span>  = sumWith ...
+</code></pre>
+Sprawdzić działanie powyższych funkcji, dla wybranych danych wejściowych, np.<pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;sumSqr [1..10]
+&lt;/code&gt;&lt;/pre&gt;"><span class="hljs-title">sumSqr</span> [<span class="hljs-number">1.</span>.<span class="hljs-number">10</span>]
+</code></pre>
+</li><li>Wykorzystując <code>sumWith</code> (bez definiowania nowej funkcji) obliczyć w GHCi<p><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-4-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-90" style="width: 3.683em; display: inline-block;"><span style="display: inline-block; position: relative; width: 3.056em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.081em 1000em 2.693em -0.442em); top: -2.222em; left: 0em;"><span class="mrow" id="MathJax-Span-91"><span class="munderover" id="MathJax-Span-92"><span style="display: inline-block; position: relative; width: 2.075em; height: 0px;"><span style="position: absolute; clip: rect(1.517em 1000em 2.872em -0.442em); top: -2.444em; left: 0em;"><span class="mo" id="MathJax-Span-93" style="font-family: STIXGeneral-Regular; vertical-align: -0.002em;">∑</span><span style="display: inline-block; width: 0px; height: 2.444em;"></span></span><span style="position: absolute; clip: rect(1.625em 1000em 2.454em -0.422em); top: -2.766em; left: 0.944em;"><span class="texatom" id="MathJax-Span-94"><span class="mrow" id="MathJax-Span-95"><span class="mn" id="MathJax-Span-96" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">15</span></span></span><span style="display: inline-block; width: 0px; height: 2.278em;"></span></span><span style="position: absolute; clip: rect(1.633em 1000em 2.452em -0.465em); top: -1.981em; left: 0.944em;"><span class="texatom" id="MathJax-Span-97"><span class="mrow" id="MathJax-Span-98"><span class="mi" id="MathJax-Span-99" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">i</span><span class="mo" id="MathJax-Span-100" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">=</span><span class="mn" id="MathJax-Span-101" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">1</span></span></span><span style="display: inline-block; width: 0px; height: 2.278em;"></span></span></span></span><span class="msubsup" id="MathJax-Span-102" style="padding-left: 0.188em;"><span style="display: inline-block; position: relative; width: 0.797em; height: 0px;"><span style="position: absolute; clip: rect(1.679em 1000em 2.678em -0.451em); top: -2.5em; left: 0em;"><span class="mi" id="MathJax-Span-103" style="font-family: STIXGeneral-Italic;">i</span><span style="display: inline-block; width: 0px; height: 2.5em;"></span></span><span style="position: absolute; top: -2.659em; left: 0.333em;"><span class="mn" id="MathJax-Span-104" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">5</span><span style="display: inline-block; width: 0px; height: 2.278em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.222em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 1.668em; vertical-align: -0.432em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-4">\sum_{i=1}^{15} i^5</script></p></li><li>Wykorzystując funkcję <code>sumWidth</code> zdefiniować<pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;listLength = sumWith ...
+&lt;/code&gt;&lt;/pre&gt;"><span class="hljs-title">listLength</span> = sumWith ...
+</code></pre>
+</li><li>(<em>opcjonalne</em>) Na podstawie (schematu) definicji <code>sum'</code> napisać funkcję<pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;prod&#39; :: Num a =&amp;gt; [a] -&amp;gt; a
+&lt;/code&gt;&lt;/pre&gt;"><span class="hljs-title">prod'</span> :: <span class="hljs-type">Num</span> a =&gt; [a] -&gt; a
+</code></pre>
+obliczającą iloczyn elementów listy</li><li>(<em>opcjonalne</em>) Na podstawie definicji <code>sumWith</code> napisać funkcję<pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;prodWith :: Num a =&amp;gt; (a -&amp;gt; a) -&amp;gt; [a] -&amp;gt; a
+&lt;/code&gt;&lt;/pre&gt;"><span class="hljs-title">prodWith</span> :: <span class="hljs-type">Num</span> a =&gt; (a -&gt; a) -&gt; [a] -&gt; a
+</code></pre>
+a następnie funkcje<pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;prod     = prodWith ...
+prodSqr  = prodWith ...
+prodCube = prodWith ...
+prodAbs  = prodWith ...
+&lt;/code&gt;&lt;/pre&gt;"><span class="hljs-title">prod</span>     = prodWith ...
+<span class="hljs-title">prodSqr</span>  = prodWith ...
+<span class="hljs-title">prodCube</span> = prodWith ...
+<span class="hljs-title">prodAbs</span>  = prodWith ...
+</code></pre>
+</li><li>(<em>opcjonalne</em>) W jaki sposób można uogólnić funkcje <code>sumWith</code> i <code>prodWith</code>?</li><li>(<em>opcjonalne</em>) Zmodyfikować deklaracje<pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;sumWith :: Num a =&amp;gt; (a -&amp;gt; a) -&amp;gt; [a] -&amp;gt; a
+prodWith :: Num a =&amp;gt; (a -&amp;gt; a) -&amp;gt; [a] -&amp;gt; a
+&lt;/code&gt;&lt;/pre&gt;"><span class="hljs-title">sumWith</span> :: <span class="hljs-type">Num</span> a =&gt; (a -&gt; a) -&gt; [a] -&gt; a
+<span class="hljs-title">prodWith</span> :: <span class="hljs-type">Num</span> a =&gt; (a -&gt; a) -&gt; [a] -&gt; a
+</code></pre>
+tak, aby można było (na ich podstawie) zdefiniować funkcje<pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;sumSqrt  = sumWith ... -- suma pierwiastków (kwadratowych) elementów listy
+prodSqrt = prodWith ... -- iloczyn pierwiastków (kwadratowych) elementów listy
+&lt;/code&gt;&lt;/pre&gt;"><span class="hljs-title">sumSqrt</span>  = sumWith ... <span class="hljs-comment">-- suma pierwiastków (kwadratowych) elementów listy</span>
+<span class="hljs-title">prodSqrt</span> = prodWith ... <span class="hljs-comment">-- iloczyn pierwiastków (kwadratowych) elementów listy</span>
+</code></pre>
+</li></ol>
+</li></ol><h5 id="3)-funkcje-wyższego-rzędu:-funkcje-jako-wyniki"><a name="3)-funkcje-wyższego-rzędu:-funkcje-jako-wyniki" href="https://upel2.cel.agh.edu.pl/wiet/pluginfile.php/97507/mod_resource/content/2/fp-lab3.html#3)-funkcje-wy%C5%BCszego-rz%C4%99du:-funkcje-jako-wyniki"></a>3) Funkcje wyższego rzędu: funkcje jako wyniki</h5><ol>
+<li><p>W pliku ex3.hs wpisujemy</p>
+<pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;sqr x = x^2
+
+funcFactory n = case n of
+ 1 -&amp;gt; id
+ 2 -&amp;gt; sqr
+ 3 -&amp;gt; (^3)
+ 4 -&amp;gt; \x -&amp;gt; x^4
+ 5 -&amp;gt; intFunc
+ _ -&amp;gt; const n
+ where
+   intFunc x = x^5
+&lt;/code&gt;&lt;/pre&gt;"><span class="hljs-title">sqr</span> x = x^<span class="hljs-number">2</span>
+
+<span class="hljs-title">funcFactory</span> n = <span class="hljs-keyword">case</span> n <span class="hljs-keyword">of</span>
+ <span class="hljs-number">1</span> -&gt; id
+ <span class="hljs-number">2</span> -&gt; sqr
+ <span class="hljs-number">3</span> -&gt; (^<span class="hljs-number">3</span>)
+ <span class="hljs-number">4</span> -&gt; \x -&gt; x^<span class="hljs-number">4</span>
+ <span class="hljs-number">5</span> -&gt; intFunc
+ _ -&gt; const n
+ <span class="hljs-keyword">where</span>
+   intFunc x = x^<span class="hljs-number">5</span>
+</code></pre>
+<p>zapisujemy zmiany, wczytujemy plik do GHCi i sprawdzamy działanie funkcji <code>funcFactory</code>, np.</p>
+<pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;ghci&amp;gt; let cub = funcFactory 3
+ghci&amp;gt; cub 4
+&lt;/code&gt;&lt;/pre&gt;"><span class="hljs-title">ghci</span>&gt; <span class="hljs-keyword">let</span> cub = funcFactory <span class="hljs-number">3</span>
+<span class="hljs-title">ghci</span>&gt; cub <span class="hljs-number">4</span>
+</code></pre>
+<p>Sprawdzamy typy <code>funcFactory</code> i <code>funcFactory 3</code></p>
+</li><li><p><strong><em>Zadania</em></strong>:</p>
+<ol>
+<li>Napisać funkcję<pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;expApproxUpTo :: Int -&amp;gt; Double -&amp;gt; Double
+expApproxUpTo n = ...
+&lt;/code&gt;&lt;/pre&gt;"><span class="hljs-title">expApproxUpTo</span> :: <span class="hljs-type">Int</span> -&gt; <span class="hljs-type">Double</span> -&gt; <span class="hljs-type">Double</span>
+<span class="hljs-title">expApproxUpTo</span> n = ...
+</code></pre>
+zwracającą rozwinięcie funkcji <span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-5-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-105" style="width: 1.083em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.889em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.381em 1000em 2.4em -0.469em); top: -2.222em; left: 0em;"><span class="mrow" id="MathJax-Span-106"><span class="msubsup" id="MathJax-Span-107"><span style="display: inline-block; position: relative; width: 0.853em; height: 0px;"><span style="position: absolute; clip: rect(1.892em 1000em 2.678em -0.469em); top: -2.5em; left: 0em;"><span class="mi" id="MathJax-Span-108" style="font-family: STIXGeneral-Italic;">e</span><span style="display: inline-block; width: 0px; height: 2.5em;"></span></span><span style="position: absolute; top: -2.641em; left: 0.444em;"><span class="mi" id="MathJax-Span-109" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">x<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.002em;"></span></span><span style="display: inline-block; width: 0px; height: 2.278em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.222em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.956em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-5">e^x</script></span> w szereg MacLaurina o długości <code>n+1, n &lt; 6</code>, tzn. <code>expApproxUpTo n</code> = <span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-6-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-110" style="width: 4.15em; display: inline-block;"><span style="display: inline-block; position: relative; width: 3.444em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.036em 1000em 2.794em -0.442em); top: -2.222em; left: 0em;"><span class="mrow" id="MathJax-Span-111"><span class="munderover" id="MathJax-Span-112"><span style="display: inline-block; position: relative; width: 2.186em; height: 0px;"><span style="position: absolute; clip: rect(1.517em 1000em 2.872em -0.442em); top: -2.444em; left: 0em;"><span class="mo" id="MathJax-Span-113" style="font-family: STIXGeneral-Regular; vertical-align: -0.002em;">∑</span><span style="display: inline-block; width: 0px; height: 2.444em;"></span></span><span style="position: absolute; clip: rect(1.799em 1000em 2.451em -0.49em); top: -2.766em; left: 0.944em;"><span class="mi" id="MathJax-Span-114" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">n</span><span style="display: inline-block; width: 0px; height: 2.278em;"></span></span><span style="position: absolute; clip: rect(1.628em 1000em 2.454em -0.49em); top: -1.981em; left: 0.944em;"><span class="texatom" id="MathJax-Span-115"><span class="mrow" id="MathJax-Span-116"><span class="mi" id="MathJax-Span-117" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">k<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.012em;"></span></span><span class="mo" id="MathJax-Span-118" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">=</span><span class="mn" id="MathJax-Span-119" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">0</span></span></span><span style="display: inline-block; width: 0px; height: 2.278em;"></span></span></span></span><span class="mfrac" id="MathJax-Span-120" style="padding-left: 0.188em;"><span style="display: inline-block; position: relative; width: 0.835em; height: 0px; margin-right: 0.12em; margin-left: 0.12em;"><span style="position: absolute; clip: rect(3.235em 1000em 4.174em -0.519em); top: -4.422em; left: 50%; margin-left: -0.357em;"><span class="msubsup" id="MathJax-Span-121"><span style="display: inline-block; position: relative; width: 0.715em; height: 0px;"><span style="position: absolute; clip: rect(1.799em 1000em 2.452em -0.519em); top: -2.278em; left: 0em;"><span class="mi" id="MathJax-Span-122" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">x<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.002em;"></span></span><span style="display: inline-block; width: 0px; height: 2.278em;"></span></span><span style="position: absolute; top: -2.479em; left: 0.384em;"><span class="mi" id="MathJax-Span-123" style="font-size: 50%; font-family: STIXGeneral-Italic;">k<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.009em;"></span></span><span style="display: inline-block; width: 0px; height: 2.222em;"></span></span></span></span><span style="display: inline-block; width: 0px; height: 4em;"></span></span><span style="position: absolute; clip: rect(1.628em 1000em 2.452em -0.49em); top: -1.881em; left: 50%; margin-left: -0.306em;"><span class="mrow" id="MathJax-Span-124"><span class="mi" id="MathJax-Span-125" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">k<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.012em;"></span></span><span class="mo" id="MathJax-Span-126" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">!</span></span><span style="display: inline-block; width: 0px; height: 2.278em;"></span></span><span style="position: absolute; clip: rect(0.819em 1000em 1.222em -0.5em); top: -1.276em; left: 0em;"><span style="border-left-width: 0.835em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 1.25px; vertical-align: 0em;"></span><span style="display: inline-block; width: 0px; height: 1.056em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.222em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 1.843em; vertical-align: -0.553em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-6">\sum_{k=0}^n\frac{x^k}{k!}</script></span>.<br>Czy da się to rozwiązanie uogólnić tak, aby funkcja <code>expApproxUpTo</code> zwracała rozwinięcia dla dowolnego <code>n</code>?</li><li><p>(<em>opcjonalne</em>) Napisać funkcję</p>
+<pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;dfr :: (Double -&amp;gt; Double) -&amp;gt; Double -&amp;gt; (Double -&amp;gt; Double)
+dfr f h = ...
+&lt;/code&gt;&lt;/pre&gt;"><span class="hljs-title">dfr</span> :: (<span class="hljs-type">Double</span> -&gt; <span class="hljs-type">Double</span>) -&gt; <span class="hljs-type">Double</span> -&gt; (<span class="hljs-type">Double</span> -&gt; <span class="hljs-type">Double</span>)
+<span class="hljs-title">dfr</span> f h = ...
+</code></pre>
+<p>zwracającą dla zadanej funkcji <code>f</code> przybliżenie jej pochodnej obliczone wg schematu różnicowego <span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-7-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-127" style="width: 11.083em; display: inline-block;"><span style="display: inline-block; position: relative; width: 9.222em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.29em 1000em 3.07em -0.647em); top: -2.5em; left: 0em;"><span class="mrow" id="MathJax-Span-128"><span class="msup" id="MathJax-Span-129"><span style="display: inline-block; position: relative; width: 0.891em; height: 0px;"><span style="position: absolute; clip: rect(1.655em 1000em 2.874em -0.647em); top: -2.5em; left: 0em;"><span class="mi" id="MathJax-Span-130" style="font-family: STIXGeneral-Italic;">f<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.146em;"></span></span><span style="display: inline-block; width: 0px; height: 2.5em;"></span></span><span style="position: absolute; top: -2.683em; left: 0.538em;"><span class="mo" id="MathJax-Span-131" style="font-size: 70.7%; font-family: STIXVariants;">′</span><span style="display: inline-block; width: 0px; height: 2.278em;"></span></span></span></span><span class="mo" id="MathJax-Span-132" style="font-family: STIXGeneral-Regular;">(</span><span class="msubsup" id="MathJax-Span-133"><span style="display: inline-block; position: relative; width: 0.961em; height: 0px;"><span style="position: absolute; clip: rect(1.892em 1000em 2.678em -0.527em); top: -2.5em; left: 0em;"><span class="mi" id="MathJax-Span-134" style="font-family: STIXGeneral-Italic;">x<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span style="display: inline-block; width: 0px; height: 2.5em;"></span></span><span style="position: absolute; top: -2.128em; left: 0.497em;"><span class="mn" id="MathJax-Span-135" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">0</span><span style="display: inline-block; width: 0px; height: 2.278em;"></span></span></span></span><span class="mo" id="MathJax-Span-136" style="font-family: STIXGeneral-Regular;">,</span><span class="mi" id="MathJax-Span-137" style="font-family: STIXGeneral-Italic; padding-left: 0.188em;">h</span><span class="mo" id="MathJax-Span-138" style="font-family: STIXGeneral-Regular;">)</span><span class="mo" id="MathJax-Span-139" style="font-family: STIXGeneral-Regular; padding-left: 0.313em;">≈</span><span class="mfrac" id="MathJax-Span-140" style="padding-left: 0.313em;"><span style="display: inline-block; position: relative; width: 4.287em; height: 0px; margin-right: 0.12em; margin-left: 0.12em;"><span style="position: absolute; clip: rect(1.628em 1000em 2.591em -0.604em); top: -2.838em; left: 50%; margin-left: -2.083em;"><span class="mrow" id="MathJax-Span-141"><span class="mi" id="MathJax-Span-142" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">f<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.103em;"></span></span><span class="mo" id="MathJax-Span-143" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">(</span><span class="msubsup" id="MathJax-Span-144"><span style="display: inline-block; position: relative; width: 0.662em; height: 0px;"><span style="position: absolute; clip: rect(1.799em 1000em 2.452em -0.519em); top: -2.278em; left: 0em;"><span class="mi" id="MathJax-Span-145" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">x<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.002em;"></span></span><span style="display: inline-block; width: 0px; height: 2.278em;"></span></span><span style="position: absolute; top: -2.116em; left: 0.331em;"><span class="mn" id="MathJax-Span-146" style="font-size: 50%; font-family: STIXGeneral-Regular;">0</span><span style="display: inline-block; width: 0px; height: 2.222em;"></span></span></span></span><span class="mo" id="MathJax-Span-147" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">+</span><span class="mi" id="MathJax-Span-148" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">h</span><span class="mo" id="MathJax-Span-149" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">)</span><span class="mo" id="MathJax-Span-150" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">−</span><span class="mi" id="MathJax-Span-151" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">f<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.103em;"></span></span><span class="mo" id="MathJax-Span-152" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">(</span><span class="msubsup" id="MathJax-Span-153"><span style="display: inline-block; position: relative; width: 0.662em; height: 0px;"><span style="position: absolute; clip: rect(1.799em 1000em 2.452em -0.519em); top: -2.278em; left: 0em;"><span class="mi" id="MathJax-Span-154" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">x<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.002em;"></span></span><span style="display: inline-block; width: 0px; height: 2.278em;"></span></span><span style="position: absolute; top: -2.116em; left: 0.331em;"><span class="mn" id="MathJax-Span-155" style="font-size: 50%; font-family: STIXGeneral-Regular;">0</span><span style="display: inline-block; width: 0px; height: 2.222em;"></span></span></span></span><span class="mo" id="MathJax-Span-156" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">)</span></span><span style="display: inline-block; width: 0px; height: 2.278em;"></span></span><span style="position: absolute; clip: rect(1.628em 1000em 2.451em -0.487em); top: -1.881em; left: 50%; margin-left: -0.194em;"><span class="mi" id="MathJax-Span-157" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">h</span><span style="display: inline-block; width: 0px; height: 2.278em;"></span></span><span style="position: absolute; clip: rect(0.819em 1000em 1.222em -0.5em); top: -1.276em; left: 0em;"><span style="border-left-width: 4.287em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 1.25px; vertical-align: 0em;"></span><span style="display: inline-block; width: 0px; height: 1.056em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.5em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 1.87em; vertical-align: -0.551em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-7">f'(x_0, h) \approx \frac{f(x_0 + h) - f(x_0)}{h}</script></span>.</p>
+<p>Sprawdzić dokładność uzyskiwanych wyników w zależności od wartości <code>h</code>.</p>
+</li><li><p>(<em>opcjonalne</em>) Napisać funkcję</p>
+<pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;dfc :: (Double -&amp;gt; Double) -&amp;gt; Double -&amp;gt; (Double -&amp;gt; Double)
+dfc f h = ...
+&lt;/code&gt;&lt;/pre&gt;"><span class="hljs-title">dfc</span> :: (<span class="hljs-type">Double</span> -&gt; <span class="hljs-type">Double</span>) -&gt; <span class="hljs-type">Double</span> -&gt; (<span class="hljs-type">Double</span> -&gt; <span class="hljs-type">Double</span>)
+<span class="hljs-title">dfc</span> f h = ...
+</code></pre>
+<p>zwracającą dla zadanej funkcji <code>f</code> przybliżenie jej pochodnej obliczone wg schematu różnicowego <span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-8-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-158" style="width: 12.083em; display: inline-block;"><span style="display: inline-block; position: relative; width: 10.056em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.29em 1000em 3.07em -0.647em); top: -2.5em; left: 0em;"><span class="mrow" id="MathJax-Span-159"><span class="msup" id="MathJax-Span-160"><span style="display: inline-block; position: relative; width: 0.891em; height: 0px;"><span style="position: absolute; clip: rect(1.655em 1000em 2.874em -0.647em); top: -2.5em; left: 0em;"><span class="mi" id="MathJax-Span-161" style="font-family: STIXGeneral-Italic;">f<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.146em;"></span></span><span style="display: inline-block; width: 0px; height: 2.5em;"></span></span><span style="position: absolute; top: -2.683em; left: 0.538em;"><span class="mo" id="MathJax-Span-162" style="font-size: 70.7%; font-family: STIXVariants;">′</span><span style="display: inline-block; width: 0px; height: 2.278em;"></span></span></span></span><span class="mo" id="MathJax-Span-163" style="font-family: STIXGeneral-Regular;">(</span><span class="msubsup" id="MathJax-Span-164"><span style="display: inline-block; position: relative; width: 0.961em; height: 0px;"><span style="position: absolute; clip: rect(1.892em 1000em 2.678em -0.527em); top: -2.5em; left: 0em;"><span class="mi" id="MathJax-Span-165" style="font-family: STIXGeneral-Italic;">x<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span style="display: inline-block; width: 0px; height: 2.5em;"></span></span><span style="position: absolute; top: -2.128em; left: 0.497em;"><span class="mn" id="MathJax-Span-166" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">0</span><span style="display: inline-block; width: 0px; height: 2.278em;"></span></span></span></span><span class="mo" id="MathJax-Span-167" style="font-family: STIXGeneral-Regular;">,</span><span class="mi" id="MathJax-Span-168" style="font-family: STIXGeneral-Italic; padding-left: 0.188em;">h</span><span class="mo" id="MathJax-Span-169" style="font-family: STIXGeneral-Regular;">)</span><span class="mo" id="MathJax-Span-170" style="font-family: STIXGeneral-Regular; padding-left: 0.313em;">≈</span><span class="mfrac" id="MathJax-Span-171" style="padding-left: 0.313em;"><span style="display: inline-block; position: relative; width: 5.12em; height: 0px; margin-right: 0.12em; margin-left: 0.12em;"><span style="position: absolute; clip: rect(1.628em 1000em 2.591em -0.604em); top: -2.838em; left: 50%; margin-left: -2.5em;"><span class="mrow" id="MathJax-Span-172"><span class="mi" id="MathJax-Span-173" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">f<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.103em;"></span></span><span class="mo" id="MathJax-Span-174" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">(</span><span class="msubsup" id="MathJax-Span-175"><span style="display: inline-block; position: relative; width: 0.662em; height: 0px;"><span style="position: absolute; clip: rect(1.799em 1000em 2.452em -0.519em); top: -2.278em; left: 0em;"><span class="mi" id="MathJax-Span-176" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">x<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.002em;"></span></span><span style="display: inline-block; width: 0px; height: 2.278em;"></span></span><span style="position: absolute; top: -2.116em; left: 0.331em;"><span class="mn" id="MathJax-Span-177" style="font-size: 50%; font-family: STIXGeneral-Regular;">0</span><span style="display: inline-block; width: 0px; height: 2.222em;"></span></span></span></span><span class="mo" id="MathJax-Span-178" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">+</span><span class="mi" id="MathJax-Span-179" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">h</span><span class="mo" id="MathJax-Span-180" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">)</span><span class="mo" id="MathJax-Span-181" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">−</span><span class="mi" id="MathJax-Span-182" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">f<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.103em;"></span></span><span class="mo" id="MathJax-Span-183" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">(</span><span class="msubsup" id="MathJax-Span-184"><span style="display: inline-block; position: relative; width: 0.662em; height: 0px;"><span style="position: absolute; clip: rect(1.799em 1000em 2.452em -0.519em); top: -2.278em; left: 0em;"><span class="mi" id="MathJax-Span-185" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">x<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.002em;"></span></span><span style="display: inline-block; width: 0px; height: 2.278em;"></span></span><span style="position: absolute; top: -2.116em; left: 0.331em;"><span class="mn" id="MathJax-Span-186" style="font-size: 50%; font-family: STIXGeneral-Regular;">0</span><span style="display: inline-block; width: 0px; height: 2.222em;"></span></span></span></span><span class="mo" id="MathJax-Span-187" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">−</span><span class="mi" id="MathJax-Span-188" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">h</span><span class="mo" id="MathJax-Span-189" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">)</span></span><span style="display: inline-block; width: 0px; height: 2.278em;"></span></span><span style="position: absolute; clip: rect(1.628em 1000em 2.451em -0.479em); top: -1.881em; left: 50%; margin-left: -0.361em;"><span class="mrow" id="MathJax-Span-190"><span class="mn" id="MathJax-Span-191" style="font-size: 70.7%; font-family: STIXGeneral-Regular;">2</span><span class="mi" id="MathJax-Span-192" style="font-size: 70.7%; font-family: STIXGeneral-Italic;">h</span></span><span style="display: inline-block; width: 0px; height: 2.278em;"></span></span><span style="position: absolute; clip: rect(0.819em 1000em 1.222em -0.5em); top: -1.276em; left: 0em;"><span style="border-left-width: 5.12em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 1.25px; vertical-align: 0em;"></span><span style="display: inline-block; width: 0px; height: 1.056em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.5em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 1.87em; vertical-align: -0.551em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-8">f'(x_0, h) \approx \frac{f(x_0 + h) - f(x_0-h)}{2 h}</script></span>.</p>
+<p>Sprawdzić dokładność uzyskiwanych wyników w zależności od wartości <code>h</code> i porównać z poprzednimi.</p>
+</li><li>(<em>opcjonalne</em>) Napisać funkcję<pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;d2f :: (Double -&amp;gt; Double) -&amp;gt; Double -&amp;gt; (Double -&amp;gt; Double)
+d2f f h = ...
+&lt;/code&gt;&lt;/pre&gt;"><span class="hljs-title">d2f</span> :: (<span class="hljs-type">Double</span> -&gt; <span class="hljs-type">Double</span>) -&gt; <span class="hljs-type">Double</span> -&gt; (<span class="hljs-type">Double</span> -&gt; <span class="hljs-type">Double</span>)
+<span class="hljs-title">d2f</span> f h = ...
+</code></pre>
+obliczającą przybliżenie drugiej pochodnej funkcji <code>f</code></li></ol>
+</li></ol><h5 id="4)-funkcje-jako-elementy-struktur-danych"><a name="4)-funkcje-jako-elementy-struktur-danych" href="https://upel2.cel.agh.edu.pl/wiet/pluginfile.php/97507/mod_resource/content/2/fp-lab3.html#4)-funkcje-jako-elementy-struktur-danych"></a>4) Funkcje jako elementy struktur danych</h5><ol>
+<li><p>W pliku ex4.hs wpisujemy</p>
+<pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;funcList :: [ Double -&amp;gt; Double ]
+funcList = [ \x -&amp;gt; (sin x)/x, \x -&amp;gt; log x + sqrt x + 1, \x -&amp;gt; (exp 1) ** x ]
+
+evalFuncListAt :: a -&amp;gt; [a -&amp;gt; b] -&amp;gt; [b]
+evalFuncListAt x [] = []
+evalFuncListAt x (f:fs) = f x : evalFuncListAt x fs
+&lt;/code&gt;&lt;/pre&gt;"><span class="hljs-title">funcList</span> :: [ <span class="hljs-type">Double</span> -&gt; <span class="hljs-type">Double</span> ]
+<span class="hljs-title">funcList</span> = [ \x -&gt; (sin x)/x, \x -&gt; log x + sqrt x + <span class="hljs-number">1</span>, \x -&gt; (exp <span class="hljs-number">1</span>) ** x ]
+
+<span class="hljs-title">evalFuncListAt</span> :: a -&gt; [a -&gt; b] -&gt; [b]
+<span class="hljs-title">evalFuncListAt</span> x [] = []
+<span class="hljs-title">evalFuncListAt</span> x (f:fs) = f x : evalFuncListAt x fs
+</code></pre>
+<p>zapisujemy zmiany, wczytujemy plik do GHCi i wpisujemy w konsoli</p>
+<pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;ghci&amp;gt; evalFuncListAt 1 funcList
+ghci&amp;gt; evalFuncListAt (-3) [ id, abs, const 5, \y -&amp;gt; 2 * y + 8 ]
+&lt;/code&gt;&lt;/pre&gt;"><span class="hljs-title">ghci</span>&gt; evalFuncListAt <span class="hljs-number">1</span> funcList
+<span class="hljs-title">ghci</span>&gt; evalFuncListAt (-<span class="hljs-number">3</span>) [ id, abs, const <span class="hljs-number">5</span>, \y -&gt; <span class="hljs-number">2</span> * y + <span class="hljs-number">8</span> ]
+</code></pre>
+</li><li><p>W pliku ex4.hs dodajemy</p>
+<pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;displEqs :: (Double -&amp;gt; Double, Double -&amp;gt; Double)
+displEqs = (\t -&amp;gt; 4 * t^2 + 2 * t, \t -&amp;gt; 3 * t^2)
+&lt;/code&gt;&lt;/pre&gt;"><span class="hljs-title">displEqs</span> :: (<span class="hljs-type">Double</span> -&gt; <span class="hljs-type">Double</span>, <span class="hljs-type">Double</span> -&gt; <span class="hljs-type">Double</span>)
+<span class="hljs-title">displEqs</span> = (\t -&gt; <span class="hljs-number">4</span> * t^<span class="hljs-number">2</span> + <span class="hljs-number">2</span> * t, \t -&gt; <span class="hljs-number">3</span> * t^<span class="hljs-number">2</span>)
+</code></pre>
+<p>zapisujemy zmiany, wczytujemy plik do GHCi i wpisujemy w konsoli</p>
+<pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;ghci&amp;gt; let (x_t, y_t) = (fst displEqs, snd displEqs)
+
+ghci&amp;gt; x_t 1
+ghci&amp;gt; y_t 1
+&lt;/code&gt;&lt;/pre&gt;"><span class="hljs-title">ghci</span>&gt; <span class="hljs-keyword">let</span> (x_t, y_t) = (fst displEqs, snd displEqs)
+
+<span class="hljs-title">ghci</span>&gt; x_t <span class="hljs-number">1</span>
+<span class="hljs-title">ghci</span>&gt; y_t <span class="hljs-number">1</span>
+</code></pre>
+</li><li><strong><em>Zadania</em></strong>:<ol>
+<li>(<em>opcjonalne</em>) W GHCi utworzyć nową listę funkcji <code>funcListExt</code> poprzez dodanie do <code>funcList</code> funkcji <span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-9-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-193" style="width: 7.817em; display: inline-block;"><span style="display: inline-block; position: relative; width: 6.5em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.45em 1000em 3.025em -0.647em); top: -2.5em; left: 0em;"><span class="mrow" id="MathJax-Span-194"><span class="mi" id="MathJax-Span-195" style="font-family: STIXGeneral-Italic;">f<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.146em;"></span></span><span class="mo" id="MathJax-Span-196" style="font-family: STIXGeneral-Regular;">(</span><span class="mi" id="MathJax-Span-197" style="font-family: STIXGeneral-Italic;">x<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mo" id="MathJax-Span-198" style="font-family: STIXGeneral-Regular;">)</span><span class="mo" id="MathJax-Span-199" style="font-family: STIXGeneral-Regular; padding-left: 0.313em;">=</span><span class="msqrt" id="MathJax-Span-200" style="padding-left: 0.313em;"><span style="display: inline-block; position: relative; width: 1.278em; height: 0px;"><span style="position: absolute; clip: rect(1.657em 1000em 2.844em -0.452em); top: -2.5em; left: 0.944em;"><span class="mrow" id="MathJax-Span-201"><span class="mo" id="MathJax-Span-202" style="font-family: STIXGeneral-Regular;">(</span></span><span style="display: inline-block; width: 0px; height: 2.5em;"></span></span><span style="position: absolute; clip: rect(0.889em 1000em 1.292em -0.5em); top: -1.939em; left: 0.944em;"><span style="border-left-width: 0.333em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 1.25px; vertical-align: -0.069em;"></span><span style="display: inline-block; width: 0px; height: 1.056em;"></span></span><span style="position: absolute; clip: rect(2.86em 1000em 4.426em -0.388em); top: -3.9em; left: 0em;"><span style="font-family: STIXGeneral-Regular;">√</span><span style="display: inline-block; width: 0px; height: 4em;"></span></span></span></span><span class="mn" id="MathJax-Span-203" style="font-family: STIXGeneral-Regular;">1</span><span class="mo" id="MathJax-Span-204" style="font-family: STIXGeneral-Regular; padding-left: 0.25em;">+</span><span class="mi" id="MathJax-Span-205" style="font-family: STIXGeneral-Italic; padding-left: 0.25em;">x<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mo" id="MathJax-Span-206" style="font-family: STIXGeneral-Regular;">)</span></span><span style="display: inline-block; width: 0px; height: 2.5em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 1.623em; vertical-align: -0.497em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-9">f(x) = \sqrt (1 + x)</script></span>; sprawdzić rozmiar  <code>funcListExt</code> i wywołać <code>evalFuncListAt</code> (dla wybranego punktu i listy <code>funcListExt</code>)</li><li>(<em>opcjonalne</em>) Wykorzystując zdefiniowane wcześniej funkcje <code>dfc</code> i <code>d2f</code> w konsoli GHCi obliczyć wektory reprezentujące prędkości (<code>velocEqs</code>) i przyspieszenia (<code>accelEqs</code>)</li></ol>
+</li></ol><h5 id="5)-operator-złożenia-funkcji-$$(.)$$-(i-notacja-_point-free_)"><a name="5)-operator-złożenia-funkcji-$$(.)$$-(i-notacja-_point-free_)" href="https://upel2.cel.agh.edu.pl/wiet/pluginfile.php/97507/mod_resource/content/2/fp-lab3.html#5)-operator-z%C5%82o%C5%BCenia-funkcji-$$(.)$$-(i-notacja-_point-free_)"></a>5) Operator złożenia funkcji <span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-10-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-207" style="width: 1.35em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1.111em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.657em 1000em 2.844em -0.452em); top: -2.5em; left: 0em;"><span class="mrow" id="MathJax-Span-208"><span class="mo" id="MathJax-Span-209" style="font-family: STIXGeneral-Regular;">(</span><span class="mo" id="MathJax-Span-210" style="font-family: STIXGeneral-Regular;">.</span><span class="mo" id="MathJax-Span-211" style="font-family: STIXGeneral-Regular; padding-left: 0.188em;">)</span></span><span style="display: inline-block; width: 0px; height: 2.5em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 1.157em; vertical-align: -0.279em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-10">(.)</script></span> (i notacja <em>point-free</em>)</h5><ol>
+<li><p>W konsoli GHCi wpisujemy kolejno następujące wyrażenia i analizujemy wyniki</p>
+<pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;ghci&amp;gt; :t (.)
+ghci&amp;gt; :i (.) --  co oznacza &quot;infixr 9&quot;?
+
+ghci&amp;gt; let f = (+1) -- vs. let f x = x + 1 vs. let f x = (+1) x
+ghci&amp;gt; let g = (*2) -- vs. let g x = x * 2 vs. let g x = (*2) x
+ghci&amp;gt; let h = (^3) -- vs. let h x = x ^ 3 vs. let h x = (^3) x
+
+ghci&amp;gt; let fg = f . g      -- vs. let fg x  = (f . g) x
+ghci&amp;gt; let gh = g . h      -- vs. let gh x  = (g . h) x
+ghci&amp;gt; let fgh = f . g . h -- vs. let fgh x = (f . g . h) x
+
+ghci&amp;gt; fgh 3
+ghci&amp;gt; f . g . h 3
+ghci&amp;gt; (f . g . h) 3
+ghci&amp;gt; (f . g . h) 3 == f (g (h (3)))
+
+ghci&amp;gt; (f . id) 3 == (id . f) 3
+ghci&amp;gt; (f . id) 3 == f 3
+
+ghci&amp;gt; (f . gh) 3 == (fg . h) 3
+ghci&amp;gt; (f . (g . h)) 3 == ((f . g) . h) 3
+ghci&amp;gt; fgh 3 == (f . gh) 3
+ghci&amp;gt; (f . g) 3 == (.) f g 3
+
+ghci&amp;gt; let u2 x y = x^2 + y^2
+
+ghci&amp;gt; (f . (u2 4) . g) 3
+ghci&amp;gt; (f . u2 4 . g) 3
+ghci&amp;gt; :t u2 4
+
+ghci&amp;gt; ((u2 1) . (u2 2) . (u2 3)) 1
+ghci&amp;gt; (u2 1 . u2 2 . u2 3) 1
+
+ghci&amp;gt; ((+) 2 . g . h) 3
+ghci&amp;gt; ((2+) . g . h) 3
+&lt;/code&gt;&lt;/pre&gt;"><span class="hljs-title">ghci</span>&gt; :t (.)
+<span class="hljs-title">ghci</span>&gt; :i (.) <span class="hljs-comment">--  co oznacza "infixr 9"?</span>
+
+<span class="hljs-title">ghci</span>&gt; <span class="hljs-keyword">let</span> f = (+<span class="hljs-number">1</span>) <span class="hljs-comment">-- vs. let f x = x + 1 vs. let f x = (+1) x</span>
+<span class="hljs-title">ghci</span>&gt; <span class="hljs-keyword">let</span> g = (*<span class="hljs-number">2</span>) <span class="hljs-comment">-- vs. let g x = x * 2 vs. let g x = (*2) x</span>
+<span class="hljs-title">ghci</span>&gt; <span class="hljs-keyword">let</span> h = (^<span class="hljs-number">3</span>) <span class="hljs-comment">-- vs. let h x = x ^ 3 vs. let h x = (^3) x</span>
+
+<span class="hljs-title">ghci</span>&gt; <span class="hljs-keyword">let</span> fg = f . g      <span class="hljs-comment">-- vs. let fg x  = (f . g) x</span>
+<span class="hljs-title">ghci</span>&gt; <span class="hljs-keyword">let</span> gh = g . h      <span class="hljs-comment">-- vs. let gh x  = (g . h) x</span>
+<span class="hljs-title">ghci</span>&gt; <span class="hljs-keyword">let</span> fgh = f . g . h <span class="hljs-comment">-- vs. let fgh x = (f . g . h) x</span>
+
+<span class="hljs-title">ghci</span>&gt; fgh <span class="hljs-number">3</span>
+<span class="hljs-title">ghci</span>&gt; f . g . h <span class="hljs-number">3</span>
+<span class="hljs-title">ghci</span>&gt; (f . g . h) <span class="hljs-number">3</span>
+<span class="hljs-title">ghci</span>&gt; (f . g . h) <span class="hljs-number">3</span> == f (g (h (<span class="hljs-number">3</span>)))
+
+<span class="hljs-title">ghci</span>&gt; (f . id) <span class="hljs-number">3</span> == (id . f) <span class="hljs-number">3</span>
+<span class="hljs-title">ghci</span>&gt; (f . id) <span class="hljs-number">3</span> == f <span class="hljs-number">3</span>
+
+<span class="hljs-title">ghci</span>&gt; (f . gh) <span class="hljs-number">3</span> == (fg . h) <span class="hljs-number">3</span>
+<span class="hljs-title">ghci</span>&gt; (f . (g . h)) <span class="hljs-number">3</span> == ((f . g) . h) <span class="hljs-number">3</span>
+<span class="hljs-title">ghci</span>&gt; fgh <span class="hljs-number">3</span> == (f . gh) <span class="hljs-number">3</span>
+<span class="hljs-title">ghci</span>&gt; (f . g) <span class="hljs-number">3</span> == (.) f g <span class="hljs-number">3</span>
+
+<span class="hljs-title">ghci</span>&gt; <span class="hljs-keyword">let</span> u2 x y = x^<span class="hljs-number">2</span> + y^<span class="hljs-number">2</span>
+
+<span class="hljs-title">ghci</span>&gt; (f . (u2 <span class="hljs-number">4</span>) . g) <span class="hljs-number">3</span>
+<span class="hljs-title">ghci</span>&gt; (f . u2 <span class="hljs-number">4</span> . g) <span class="hljs-number">3</span>
+<span class="hljs-title">ghci</span>&gt; :t u2 <span class="hljs-number">4</span>
+
+<span class="hljs-title">ghci</span>&gt; ((u2 <span class="hljs-number">1</span>) . (u2 <span class="hljs-number">2</span>) . (u2 <span class="hljs-number">3</span>)) <span class="hljs-number">1</span>
+<span class="hljs-title">ghci</span>&gt; (u2 <span class="hljs-number">1</span> . u2 <span class="hljs-number">2</span> . u2 <span class="hljs-number">3</span>) <span class="hljs-number">1</span>
+
+<span class="hljs-title">ghci</span>&gt; ((+) <span class="hljs-number">2</span> . g . h) <span class="hljs-number">3</span>
+<span class="hljs-title">ghci</span>&gt; ((<span class="hljs-number">2</span>+) . g . h) <span class="hljs-number">3</span>
+</code></pre>
+</li><li><strong><em>Zadania</em></strong>:<ol>
+<li>Wykorzystując funkcje <code>sort</code> i <code>reverse</code> oraz operator <code>.</code> napisać funkcję sortującą malejąco podaną listę<pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;sortDesc :: Ord a =&amp;gt; [a] -&amp;gt; [a]
+sortDesc xs = ...
+&lt;/code&gt;&lt;/pre&gt;"><span class="hljs-title">sortDesc</span> :: <span class="hljs-type">Ord</span> a =&gt; [a] -&gt; [a]
+<span class="hljs-title">sortDesc</span> xs = ...
+</code></pre>
+<em>Uwaga</em>: potrzebny będzie <code>import Data.List</code></li><li>Przepisać funkcję <code>sortDesc</code> do wersji <em>point-free</em></li><li>W GHCi zdefiniować funkcję<pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;let w3 = \x y z -&amp;gt; sqrt (x^2 + y^2 + z^2)
+&lt;/code&gt;&lt;/pre&gt;"><span class="hljs-title">let</span> w3 = \x y z -&gt; sqrt (x^<span class="hljs-number">2</span> + y^<span class="hljs-number">2</span> + z^<span class="hljs-number">2</span>)
+</code></pre>
+a następnie uzupełnić poniższe wyrażenie<pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;(f . w3 ___ . h) 3
+&lt;/code&gt;&lt;/pre&gt;">(f . w3 ___ . h) <span class="hljs-number">3</span>
+</code></pre>
+</li><li>(<em>opcjonalne</em>) Napisać funkcję<pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;are2FunsEqAt :: Eq a =&amp;gt; (t -&amp;gt; a) -&amp;gt; (t -&amp;gt; a) -&amp;gt; [t] -&amp;gt; Bool
+are2FunsEqAt f g xs = ... -- are2FunsEqAt (+2) (\x -&amp;gt; x + 2) [1..1000] = True
+&lt;/code&gt;&lt;/pre&gt;"><span class="hljs-title">are2FunsEqAt</span> :: <span class="hljs-type">Eq</span> a =&gt; (t -&gt; a) -&gt; (t -&gt; a) -&gt; [t] -&gt; <span class="hljs-type">Bool</span>
+<span class="hljs-title">are2FunsEqAt</span> f g xs = ... <span class="hljs-comment">-- are2FunsEqAt (+2) (\x -&gt; x + 2) [1..1000] = True</span>
+</code></pre>
+sprawdzającą, czy funkcje <code>f</code> i <code>g</code> mają równe wartości we wszystkich punktach podanych w liście <code>xs</code></li><li>(<em>opcjonalne</em>) Napisać funkcję<pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;infixl 9 &amp;gt;.&amp;gt;
+(&amp;gt;.&amp;gt;) :: (a -&amp;gt; b) -&amp;gt; (b -&amp;gt; c) -&amp;gt; (a -&amp;gt; c)
+g &amp;gt;.&amp;gt; f = ...
+&lt;/code&gt;&lt;/pre&gt;"><span class="hljs-infix"><span class="hljs-keyword">infixl</span> <span class="hljs-number">9</span> &gt;.&gt;</span>
+(&gt;.&gt;) :: (a -&gt; b) -&gt; (b -&gt; c) -&gt; (a -&gt; c)
+<span class="hljs-title">g</span> &gt;.&gt; f = ...
+</code></pre>
+i sprawdzić jej działanie</li><li>(<em>opcjonalne</em>) Napisać funkcję (kompozycja/złożenie listy funkcji)<pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;composeFunList :: [a -&amp;gt; a] -&amp;gt; (a -&amp;gt; a)
+composeFunList ...
+&lt;/code&gt;&lt;/pre&gt;"><span class="hljs-title">composeFunList</span> :: [a -&gt; a] -&gt; (a -&gt; a)
+<span class="hljs-title">composeFunList</span> ...
+</code></pre>
+</li><li>(<em>opcjonalne</em>) Przeanalizować typ operatora <code>(.).(.)</code>, a następnie zastosować go do złożenia wybranych funkcji (odpowiedniego typu)</li></ol>
+</li></ol><h5 id="6)-operator-" aplikacji"-funkcji-$$($)$$"=""><a name="6)-operator-" aplikacji"-funkcji-$$($)$$"="" href="https://upel2.cel.agh.edu.pl/wiet/pluginfile.php/97507/mod_resource/content/2/fp-lab3.html#6)-operator-"></a>6) Operator “aplikacji” funkcji <span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-11-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-212" style="width: 1.417em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1.167em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.606em 1000em 2.844em -0.452em); top: -2.5em; left: 0em;"><span class="mrow" id="MathJax-Span-213"><span class="mo" id="MathJax-Span-214" style="font-family: STIXGeneral-Regular;">(</span><span class="texatom" id="MathJax-Span-215"><span class="mrow" id="MathJax-Span-216"><span class="mo" id="MathJax-Span-217" style="font-family: STIXGeneral-Regular;">$</span></span></span><span class="mo" id="MathJax-Span-218" style="font-family: STIXGeneral-Regular;">)</span></span><span style="display: inline-block; width: 0px; height: 2.5em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 1.218em; vertical-align: -0.279em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-11">($)</script></span></h5><ol>
+<li><p>W konsoli GHCi wpisujemy kolejno następujące wyrażenia i analizujemy wyniki</p>
+<pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;ghci&amp;gt; :t ($)
+ghci&amp;gt; :i ($) -- porównujemy z wynikiem &quot;:i (.)&quot;
+ghci&amp;gt; :t ($!)
+ghci&amp;gt; :i ($!)
+
+ghci&amp;gt; ($) f 3 == f $ 3
+ghci&amp;gt; (($) f 3) == (f $ 3)
+ghci&amp;gt; ($) f 3 == (f $ 3)
+ghci&amp;gt; f (g (h (3)))
+ghci&amp;gt; f (g (h $ 3))
+ghci&amp;gt; f (g $ h $ 3)
+ghci&amp;gt; f $ g $ h $ 3
+
+ghci&amp;gt; (f $ g $ h $ 3) == (f $ (g $ (h $ 3)))
+ghci&amp;gt; f $ g $ h $ 3 == (f $ (g $ (h $ 3)))
+ghci&amp;gt; (f $ g $ h $ 3) == f $ (g $ (h $ 3))
+ghci&amp;gt; :i (==) -- porównujemy z wynikiem &quot;:i ($)&quot;
+
+ghci&amp;gt; _3 = ($3)
+ghci&amp;gt; f 3
+ghci&amp;gt; _3 f -- :)
+ghci&amp;gt; f 3 == _3 f
+
+ghci&amp;gt; ((,) $ 1) 2
+&lt;/code&gt;&lt;/pre&gt;"><span class="hljs-title">ghci</span>&gt; :t ($)
+<span class="hljs-title">ghci</span>&gt; :i ($) <span class="hljs-comment">-- porównujemy z wynikiem ":i (.)"</span>
+<span class="hljs-title">ghci</span>&gt; :t ($!)
+<span class="hljs-title">ghci</span>&gt; :i ($!)
+
+<span class="hljs-title">ghci</span>&gt; ($) f <span class="hljs-number">3</span> == f $ <span class="hljs-number">3</span>
+<span class="hljs-title">ghci</span>&gt; (($) f <span class="hljs-number">3</span>) == (f $ <span class="hljs-number">3</span>)
+<span class="hljs-title">ghci</span>&gt; ($) f <span class="hljs-number">3</span> == (f $ <span class="hljs-number">3</span>)
+<span class="hljs-title">ghci</span>&gt; f (g (h (<span class="hljs-number">3</span>)))
+<span class="hljs-title">ghci</span>&gt; f (g (h $ <span class="hljs-number">3</span>))
+<span class="hljs-title">ghci</span>&gt; f (g $ h $ <span class="hljs-number">3</span>)
+<span class="hljs-title">ghci</span>&gt; f $ g $ h $ <span class="hljs-number">3</span>
+
+<span class="hljs-title">ghci</span>&gt; (f $ g $ h $ <span class="hljs-number">3</span>) == (f $ (g $ (h $ <span class="hljs-number">3</span>)))
+<span class="hljs-title">ghci</span>&gt; f $ g $ h $ <span class="hljs-number">3</span> == (f $ (g $ (h $ <span class="hljs-number">3</span>)))
+<span class="hljs-title">ghci</span>&gt; (f $ g $ h $ <span class="hljs-number">3</span>) == f $ (g $ (h $ <span class="hljs-number">3</span>))
+<span class="hljs-title">ghci</span>&gt; :i (==) <span class="hljs-comment">-- porównujemy z wynikiem ":i ($)"</span>
+
+<span class="hljs-title">ghci</span>&gt; _3 = ($<span class="hljs-number">3</span>)
+<span class="hljs-title">ghci</span>&gt; f <span class="hljs-number">3</span>
+<span class="hljs-title">ghci</span>&gt; _3 f <span class="hljs-comment">-- :)</span>
+<span class="hljs-title">ghci</span>&gt; f <span class="hljs-number">3</span> == _3 f
+
+<span class="hljs-title">ghci</span>&gt; ((,) $ <span class="hljs-number">1</span>) <span class="hljs-number">2</span>
+</code></pre>
+</li><li><strong><em>Zadania</em></strong>:<ol>
+<li>Dodać nawiasy w wyrażeniu <code>(,) $ 1 $ 2</code>, aby otrzymać wynik <code>(1,2)</code></li><li>Sprawdzić (eksperymentalnie) równoważność poniższych wyrażeń<pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;f $ g $ h 3
+(f . g . h) 3
+f . g . h $ 3
+&lt;/code&gt;&lt;/pre&gt;"><span class="hljs-title">f</span> $ g $ h <span class="hljs-number">3</span>
+(f . g . h) <span class="hljs-number">3</span>
+<span class="hljs-title">f</span> . g . h $ <span class="hljs-number">3</span>
+</code></pre>
+Które z nich jest najbardziej czytelne?</li><li>(<em>opcjonalne</em>) Dodać nawiasy w wyrażeniu <code>f . $ g . h 3</code>, aby otrzymać wynik <code>55</code></li></ol>
+</li></ol><h5 id="7)-funkcje-wyższego-rzędu:-```filter```"><a name="7)-funkcje-wyższego-rzędu:-```filter```" href="https://upel2.cel.agh.edu.pl/wiet/pluginfile.php/97507/mod_resource/content/2/fp-lab3.html#7)-funkcje-wy%C5%BCszego-rz%C4%99du:-%60%60%60filter%60%60%60"></a>7) Funkcje wyższego rzędu: <code>filter</code></h5><ol>
+<li>W pliku <code>ex7.hs</code> wpisujemy funkcję<pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;onlyEven [] = []
+onlyEven (x:xs)
+ | x `mod` 2 == 0 = x : onlyEven xs
+ | otherwise      = onlyEven xs
+&lt;/code&gt;&lt;/pre&gt;"><span class="hljs-title">onlyEven</span> [] = []
+<span class="hljs-title">onlyEven</span> (x:xs)
+ | x `mod` <span class="hljs-number">2</span> == <span class="hljs-number">0</span> = x : onlyEven xs
+ | otherwise      = onlyEven xs
+</code></pre>
+(zapisujemy zmiany, wczytujemy plik do GHCi) i sprawdzamy jej działanie</li><li><p><strong><em>Zadania</em></strong>:</p>
+<ol>
+<li>(<em>opcjonalne</em>) Napisać (wg podanego schematu) definicje funkcji <code>onlyOdd</code> i <code>onlyUpper</code><pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;ghci&amp;gt; onlyOdd [1..10] -- [1,3,5,7,9]
+ghci&amp;gt; onlyUpper &quot;My name is Inigo Montoya. You killed my father. Prepare to die.&quot; -- &quot;MIMYP&quot;
+&lt;/code&gt;&lt;/pre&gt;"><span class="hljs-title">ghci</span>&gt; onlyOdd [<span class="hljs-number">1.</span>.<span class="hljs-number">10</span>] <span class="hljs-comment">-- [1,3,5,7,9]</span>
+<span class="hljs-title">ghci</span>&gt; onlyUpper <span class="hljs-string">"My name is Inigo Montoya. You killed my father. Prepare to die."</span> <span class="hljs-comment">-- "MIMYP"</span>
+</code></pre>
+</li><li><p>Uogólnić poprzednie rozwiązania wprowadzając funkcję <code>filter'</code></p>
+<pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;filter&#39; :: (a -&amp;gt; Bool) -&amp;gt; [a] -&amp;gt; [a]
+filter&#39; p ...
+
+onlyEven  = filter&#39; ...
+onlyOdd   = filter&#39; ...
+onlyUpper = filter&#39; ...
+&lt;/code&gt;&lt;/pre&gt;"><span class="hljs-title">filter'</span> :: (a -&gt; <span class="hljs-type">Bool</span>) -&gt; [a] -&gt; [a]
+<span class="hljs-title">filter'</span> p ...
+
+<span class="hljs-title">onlyEven</span>  = filter' ...
+<span class="hljs-title">onlyOdd</span>   = filter' ...
+<span class="hljs-title">onlyUpper</span> = filter' ...
+</code></pre>
+</li><li>Porównać czasy wykonania (opcja <code>:set +s</code>)<pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;ghci&amp;gt; length (onlyEven [1..10^6])
+ghci&amp;gt; length (filter even [1..10^6]) -- filter z biblioteki standardowej
+&lt;/code&gt;&lt;/pre&gt;"><span class="hljs-title">ghci</span>&gt; length (onlyEven [<span class="hljs-number">1.</span>.<span class="hljs-number">10</span>^<span class="hljs-number">6</span>])
+<span class="hljs-title">ghci</span>&gt; length (filter even [<span class="hljs-number">1.</span>.<span class="hljs-number">10</span>^<span class="hljs-number">6</span>]) <span class="hljs-comment">-- filter z biblioteki standardowej</span>
+</code></pre>
+</li><li>Zmodyfikować powyższe wyrażenia tak, aby nie zawierały nawiasów (użyć <code>.</code> i/lub <code>$</code>)</li><li>Przepisać używając <em>list comprehensions</em><pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;length (filter even [1..10^6])
+&lt;/code&gt;&lt;/pre&gt;"><span class="hljs-title">length</span> (filter even [<span class="hljs-number">1.</span>.<span class="hljs-number">10</span>^<span class="hljs-number">6</span>])
+</code></pre>
+Zmierzyć czas wykonania i porównać go z uzyskanym w poprzednim zadaniu</li><li>Obliczyć w GHCi i przeanalizować poniższe wyrażenia<pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;ghci&amp;gt; filter (\s -&amp;gt; length s == 2) [&quot;a&quot;, &quot;aa&quot;, &quot;aaa&quot;, &quot;b&quot;, &quot;bb&quot;]
+ghci&amp;gt; filter (\(x,y) -&amp;gt; x &amp;gt; y) [(1,2), (2,2), (2,1), (2,2), (3,2)]
+ghci&amp;gt; filter (\xs -&amp;gt; sum xs &amp;gt; 300) [[1..5], [56..60], [101..105]]
+ghci&amp;gt; length . filter (\f -&amp;gt; f 2 &amp;gt; 10) $ [(+5), (*5), (^5), \x -&amp;gt; 3 * x + 7]
+&lt;/code&gt;&lt;/pre&gt;"><span class="hljs-title">ghci</span>&gt; filter (\s -&gt; length s == <span class="hljs-number">2</span>) [<span class="hljs-string">"a"</span>, <span class="hljs-string">"aa"</span>, <span class="hljs-string">"aaa"</span>, <span class="hljs-string">"b"</span>, <span class="hljs-string">"bb"</span>]
+<span class="hljs-title">ghci</span>&gt; filter (\(x,y) -&gt; x &gt; y) [(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>), (<span class="hljs-number">2</span>,<span class="hljs-number">2</span>), (<span class="hljs-number">2</span>,<span class="hljs-number">1</span>), (<span class="hljs-number">2</span>,<span class="hljs-number">2</span>), (<span class="hljs-number">3</span>,<span class="hljs-number">2</span>)]
+<span class="hljs-title">ghci</span>&gt; filter (\xs -&gt; sum xs &gt; <span class="hljs-number">300</span>) [[<span class="hljs-number">1.</span>.<span class="hljs-number">5</span>], [<span class="hljs-number">56.</span>.<span class="hljs-number">60</span>], [<span class="hljs-number">101.</span>.<span class="hljs-number">105</span>]]
+<span class="hljs-title">ghci</span>&gt; length . filter (\f -&gt; f <span class="hljs-number">2</span> &gt; <span class="hljs-number">10</span>) $ [(+<span class="hljs-number">5</span>), (*<span class="hljs-number">5</span>), (^<span class="hljs-number">5</span>), \x -&gt; <span class="hljs-number">3</span> * x + <span class="hljs-number">7</span>]
+</code></pre>
+</li></ol>
+</li></ol><h5 id="8)-funkcje-wyższego-rzędu:-```map```"><a name="8)-funkcje-wyższego-rzędu:-```map```" href="https://upel2.cel.agh.edu.pl/wiet/pluginfile.php/97507/mod_resource/content/2/fp-lab3.html#8)-funkcje-wy%C5%BCszego-rz%C4%99du:-%60%60%60map%60%60%60"></a>8) Funkcje wyższego rzędu: <code>map</code></h5><ol>
+<li>W pliku <code>ex8.hs</code> wpisujemy funkcję<pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;doubleElems []     = []
+doubleElems (x:xs) = 2 * x : doubleElems xs
+&lt;/code&gt;&lt;/pre&gt;"><span class="hljs-title">doubleElems</span> []     = []
+<span class="hljs-title">doubleElems</span> (x:xs) = <span class="hljs-number">2</span> * x : doubleElems xs
+</code></pre>
+(zapisujemy zmiany, wczytujemy plik do GHCi) i sprawdzamy jej działanie</li><li><p><strong><em>Zadania</em></strong>:</p>
+<ol>
+<li>(<em>opcjonalne</em>) Napisać (wg podanego schematu) definicje funkcji <code>sqrElems</code> i <code>lowerCase</code><pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;ghci&amp;gt; sqrElems [1..3] -- [1,4,9]
+ghci&amp;gt; lowerCase &quot;ABCD&quot; -- &quot;abcd&quot;, konieczny import Data.Char
+&lt;/code&gt;&lt;/pre&gt;"><span class="hljs-title">ghci</span>&gt; sqrElems [<span class="hljs-number">1.</span>.<span class="hljs-number">3</span>] <span class="hljs-comment">-- [1,4,9]</span>
+<span class="hljs-title">ghci</span>&gt; lowerCase <span class="hljs-string">"ABCD"</span> <span class="hljs-comment">-- "abcd", konieczny import Data.Char</span>
+</code></pre>
+</li><li><p>Uogólnić poprzednie rozwiązania wprowadzając funkcję <code>map'</code></p>
+<pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;map&#39; :: (a -&amp;gt; b) -&amp;gt; [a] -&amp;gt; [b]
+map&#39; f ...
+
+doubleElems = map&#39; ...
+sqrElems    = map&#39; ...
+lowerCase   = map&#39; ...
+&lt;/code&gt;&lt;/pre&gt;"><span class="hljs-title">map'</span> :: (a -&gt; b) -&gt; [a] -&gt; [b]
+<span class="hljs-title">map'</span> f ...
+
+<span class="hljs-title">doubleElems</span> = map' ...
+<span class="hljs-title">sqrElems</span>    = map' ...
+<span class="hljs-title">lowerCase</span>   = map' ...
+</code></pre>
+</li><li>Przepisać powyższe funkcje używając <em>list comprehensions</em></li><li>Porównać czasy wykonania (opcja <code>:set +s</code>)<pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;ghci&amp;gt; length . filter even $ doubleElems [1..10^7]
+ghci&amp;gt; length . filter even . map (*2) $ [1..10^7] -- map z biblioteki standardowej
+&lt;/code&gt;&lt;/pre&gt;"><span class="hljs-title">ghci</span>&gt; length . filter even $ doubleElems [<span class="hljs-number">1.</span>.<span class="hljs-number">10</span>^<span class="hljs-number">7</span>]
+<span class="hljs-title">ghci</span>&gt; length . filter even . map (*<span class="hljs-number">2</span>) $ [<span class="hljs-number">1.</span>.<span class="hljs-number">10</span>^<span class="hljs-number">7</span>] <span class="hljs-comment">-- map z biblioteki standardowej</span>
+</code></pre>
+</li><li>(<em>opcjonalne</em>) Przepisać powyższe wyrażenia używając <em>list comprehensions</em>, a następnie zmierzyć czasy wykonania i porównać je z uzyskanymi w poprzednim zadaniu</li><li>Obliczyć w GHCi i przeanalizować poniższe wyrażenia<pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;ghci&amp;gt; map (*2) [1..10]
+ghci&amp;gt; map (^2) [1..10]
+ghci&amp;gt; map toLower &quot;ABCD&quot; -- konieczny import Data.Char
+ghci&amp;gt; length . filter (&amp;gt;10) . map ($ 2) $ [(+5), (*5), (^5), \x -&amp;gt; 3 * x + 7]
+ghci&amp;gt; map show [1..10]
+ghci&amp;gt; map length [[1],[1,2],[1,2,3]]
+ghci&amp;gt; map (map length) [ [[1],[1,2],[1,2,3]], [[1],[1,2]] ]
+ghci&amp;gt; map (\(x,y) -&amp;gt; (y,x)) [(1,&#39;a&#39;), (2,&#39;b&#39;), (3,&#39;c&#39;)]
+ghci&amp;gt; map (\(x,y) -&amp;gt; y) [(1,&#39;a&#39;), (2,&#39;b&#39;), (3,&#39;c&#39;)]
+ghci&amp;gt; map (\s -&amp;gt; (s, length s)) [&quot;manuscripts&quot;,&quot;do&quot;,&quot;not&quot;,&quot;burn&quot;]
+&lt;/code&gt;&lt;/pre&gt;"><span class="hljs-title">ghci</span>&gt; map (*<span class="hljs-number">2</span>) [<span class="hljs-number">1.</span>.<span class="hljs-number">10</span>]
+<span class="hljs-title">ghci</span>&gt; map (^<span class="hljs-number">2</span>) [<span class="hljs-number">1.</span>.<span class="hljs-number">10</span>]
+<span class="hljs-title">ghci</span>&gt; map toLower <span class="hljs-string">"ABCD"</span> <span class="hljs-comment">-- konieczny import Data.Char</span>
+<span class="hljs-title">ghci</span>&gt; length . filter (&gt;<span class="hljs-number">10</span>) . map ($ <span class="hljs-number">2</span>) $ [(+<span class="hljs-number">5</span>), (*<span class="hljs-number">5</span>), (^<span class="hljs-number">5</span>), \x -&gt; <span class="hljs-number">3</span> * x + <span class="hljs-number">7</span>]
+<span class="hljs-title">ghci</span>&gt; map show [<span class="hljs-number">1.</span>.<span class="hljs-number">10</span>]
+<span class="hljs-title">ghci</span>&gt; map length [[<span class="hljs-number">1</span>],[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>],[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]]
+<span class="hljs-title">ghci</span>&gt; map (map length) [ [[<span class="hljs-number">1</span>],[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>],[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]], [[<span class="hljs-number">1</span>],[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>]] ]
+<span class="hljs-title">ghci</span>&gt; map (\(x,y) -&gt; (y,x)) [(<span class="hljs-number">1</span>,'a'), (<span class="hljs-number">2</span>,'b'), (<span class="hljs-number">3</span>,'c')]
+<span class="hljs-title">ghci</span>&gt; map (\(x,y) -&gt; y) [(<span class="hljs-number">1</span>,'a'), (<span class="hljs-number">2</span>,'b'), (<span class="hljs-number">3</span>,'c')]
+<span class="hljs-title">ghci</span>&gt; map (\s -&gt; (s, length s)) [<span class="hljs-string">"manuscripts"</span>,<span class="hljs-string">"do"</span>,<span class="hljs-string">"not"</span>,<span class="hljs-string">"burn"</span>]
+</code></pre>
+</li><li>(<em>opcjonalne</em>) Zdefiniować funkcję <code>evalFuncListAt</code> wykorzystując <code>map</code><pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;evalFuncListAt :: a -&amp;gt; [a -&amp;gt; b] -&amp;gt; [b]
+evalFuncListAt x = map ...
+&lt;/code&gt;&lt;/pre&gt;"><span class="hljs-title">evalFuncListAt</span> :: a -&gt; [a -&gt; b] -&gt; [b]
+<span class="hljs-title">evalFuncListAt</span> x = map ...
+</code></pre>
+</li><li>(<em>opcjonalne</em>) Napisać <em>list comprehensions</em> odpowiadające powyższym wyrażeniom</li><li>(<em>opcjonalne</em>) Przeanalizować z punktu widzenia złożoności obliczeniowej (czasowej i pamięciowej) dwa warianty połączenia operatorów <code>map</code> i <code>filter</code><pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;map f . filter p $ xs
+filter p . map f $ xs
+&lt;/code&gt;&lt;/pre&gt;"><span class="hljs-title">map</span> f . filter p $ xs
+<span class="hljs-title">filter</span> p . map f $ xs
+</code></pre>
+</li></ol>
+</li></ol><h5 id="9)-funkcje-wyższego-rzędu:-```foldr```-i-```foldl```"><a name="9)-funkcje-wyższego-rzędu:-```foldr```-i-```foldl```" href="https://upel2.cel.agh.edu.pl/wiet/pluginfile.php/97507/mod_resource/content/2/fp-lab3.html#9)-funkcje-wy%C5%BCszego-rz%C4%99du:-%60%60%60foldr%60%60%60-i-%60%60%60foldl%60%60%60"></a>9) Funkcje wyższego rzędu: <code>foldr</code> i <code>foldl</code></h5><ol>
+<li><p>W pliku <code>ex9.hs</code> wpisujemy funkcje</p>
+<pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;sumWith g []     = 0
+sumWith g (x:xs) = g x + sumWith g xs -- (+) (g x) (sumWith g xs)
+
+prodWith g []     = 1
+prodWith g (x:xs) = g x * prodWith g xs -- (*) (g x) (prodWith g xs)
+&lt;/code&gt;&lt;/pre&gt;"><span class="hljs-title">sumWith</span> g []     = <span class="hljs-number">0</span>
+<span class="hljs-title">sumWith</span> g (x:xs) = g x + sumWith g xs <span class="hljs-comment">-- (+) (g x) (sumWith g xs)</span>
+
+<span class="hljs-title">prodWith</span> g []     = <span class="hljs-number">1</span>
+<span class="hljs-title">prodWith</span> g (x:xs) = g x * prodWith g xs <span class="hljs-comment">-- (*) (g x) (prodWith g xs)</span>
+</code></pre>
+<p>(zapisujemy zmiany, wczytujemy plik do GHCi) i sprawdzamy ich działanie</p>
+</li><li><p>W pliku <code>ex9.hs</code> wpisujemy funkcje</p>
+<pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;sumWith&#39; :: Num a =&amp;gt; (a -&amp;gt; a) -&amp;gt; [a] -&amp;gt; a
+sumWith&#39; = go 0
+ where
+   go acc g [] = acc
+   go acc g (x:xs) = go (g x + acc) g xs
+
+prodWith&#39; :: Num a =&amp;gt; (a -&amp;gt; a) -&amp;gt; [a] -&amp;gt; a
+prodWith&#39; = go 1
+ where
+   go acc g [] = acc
+   go acc g (x:xs) = go (g x * acc) g xs
+&lt;/code&gt;&lt;/pre&gt;"><span class="hljs-title">sumWith'</span> :: <span class="hljs-type">Num</span> a =&gt; (a -&gt; a) -&gt; [a] -&gt; a
+<span class="hljs-title">sumWith'</span> = go <span class="hljs-number">0</span>
+ <span class="hljs-keyword">where</span>
+   go acc g [] = acc
+   go acc g (x:xs) = go (g x + acc) g xs
+
+<span class="hljs-title">prodWith'</span> :: <span class="hljs-type">Num</span> a =&gt; (a -&gt; a) -&gt; [a] -&gt; a
+<span class="hljs-title">prodWith'</span> = go <span class="hljs-number">1</span>
+ <span class="hljs-keyword">where</span>
+   go acc g [] = acc
+   go acc g (x:xs) = go (g x * acc) g xs
+</code></pre>
+<p>(zapisujemy zmiany, wczytujemy plik do GHCi) i sprawdzamy ich działanie</p>
+</li><li><p><strong><em>Zadania</em></strong>:</p>
+<ol>
+<li><p>Uogólnić <code>sumWith</code> i <code>prodWith</code> wprowadzając funkcję <code>foldr'</code></p>
+<pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;foldr&#39; :: (a -&amp;gt; b -&amp;gt; b) -&amp;gt; b -&amp;gt; [a] -&amp;gt; b
+foldr&#39; f z ...
+
+sumWith&#39;&#39; g  = foldr&#39; (\x acc -&amp;gt; g x + acc) 0
+prodWith&#39;&#39; g = foldr&#39; ...
+&lt;/code&gt;&lt;/pre&gt;"><span class="hljs-title">foldr'</span> :: (a -&gt; b -&gt; b) -&gt; b -&gt; [a] -&gt; b
+<span class="hljs-title">foldr'</span> f z ...
+
+<span class="hljs-title">sumWith''</span> g  = foldr' (\x acc -&gt; g x + acc) <span class="hljs-number">0</span>
+<span class="hljs-title">prodWith''</span> g = foldr' ...
+</code></pre>
+<p>Sprawdzić działanie nowych wersji <code>sumWith</code> i <code>prodWith</code></p>
+</li><li><p>Uogólnić <code>sumWith'</code> i <code>prodWith'</code> wprowadzając funkcję <code>foldl'</code></p>
+<pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;foldl&#39; :: (b -&amp;gt; a -&amp;gt; b) -&amp;gt; b -&amp;gt; [a] -&amp;gt; b
+foldl&#39; f z ...
+
+sumWith&#39;&#39;&#39; g  = foldl&#39; (\acc x -&amp;gt; g x + acc) 0
+prodWith&#39;&#39;&#39; g = foldl&#39; ...
+&lt;/code&gt;&lt;/pre&gt;"><span class="hljs-title">foldl'</span> :: (b -&gt; a -&gt; b) -&gt; b -&gt; [a] -&gt; b
+<span class="hljs-title">foldl'</span> f z ...
+
+<span class="hljs-title">sumWith'''</span> g  = foldl' (\acc x -&gt; g x + acc) <span class="hljs-number">0</span>
+<span class="hljs-title">prodWith'''</span> g = foldl' ...
+</code></pre>
+<p>Sprawdzić działanie nowych wersji <code>sumWith'</code> i <code>prodWith'</code></p>
+</li><li>(<em>opcjonalne</em>) Porównać czasy wykonania (opcja <code>:set +s</code>)<pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;ghci&amp;gt; foldr&#39; (+) 0 [1..10^6]
+ghci&amp;gt; foldr (+) 0 [1..10^6] -- foldr z biblioteki standardowej
+&lt;/code&gt;&lt;/pre&gt;"><span class="hljs-title">ghci</span>&gt; foldr' (+) <span class="hljs-number">0</span> [<span class="hljs-number">1.</span>.<span class="hljs-number">10</span>^<span class="hljs-number">6</span>]
+<span class="hljs-title">ghci</span>&gt; foldr (+) <span class="hljs-number">0</span> [<span class="hljs-number">1.</span>.<span class="hljs-number">10</span>^<span class="hljs-number">6</span>] <span class="hljs-comment">-- foldr z biblioteki standardowej</span>
+</code></pre>
+</li><li>(<em>opcjonalne</em>) Porównać czasy wykonania (opcja <code>:set +s</code>)<pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;ghci&amp;gt; foldr (\x acc -&amp;gt; x + 1 + acc) 0 [1..10^6]
+ghci&amp;gt; foldl (\acc x -&amp;gt; x + 1 + acc) 0 [1..10^6]
+ghci&amp;gt; foldl&#39; (\acc x -&amp;gt; x + 1 + acc) 0 [1..10^6] -- konieczny import Data.List
+ghci&amp;gt; sum . map (+1) $ [1..10^6]
+ghci&amp;gt; sum [x + 1 | x &amp;lt;- [1..10^6]]
+&lt;/code&gt;&lt;/pre&gt;"><span class="hljs-title">ghci</span>&gt; foldr (\x acc -&gt; x + <span class="hljs-number">1</span> + acc) <span class="hljs-number">0</span> [<span class="hljs-number">1.</span>.<span class="hljs-number">10</span>^<span class="hljs-number">6</span>]
+<span class="hljs-title">ghci</span>&gt; foldl (\acc x -&gt; x + <span class="hljs-number">1</span> + acc) <span class="hljs-number">0</span> [<span class="hljs-number">1.</span>.<span class="hljs-number">10</span>^<span class="hljs-number">6</span>]
+<span class="hljs-title">ghci</span>&gt; foldl' (\acc x -&gt; x + <span class="hljs-number">1</span> + acc) <span class="hljs-number">0</span> [<span class="hljs-number">1.</span>.<span class="hljs-number">10</span>^<span class="hljs-number">6</span>] <span class="hljs-comment">-- konieczny import Data.List</span>
+<span class="hljs-title">ghci</span>&gt; sum . map (+<span class="hljs-number">1</span>) $ [<span class="hljs-number">1.</span>.<span class="hljs-number">10</span>^<span class="hljs-number">6</span>]
+<span class="hljs-title">ghci</span>&gt; sum [x + <span class="hljs-number">1</span> | x &lt;- [<span class="hljs-number">1.</span>.<span class="hljs-number">10</span>^<span class="hljs-number">6</span>]]
+</code></pre>
+</li><li><p>Obliczyć w GHCi i przeanalizować poniższe wyrażenia</p>
+<pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;ghci&amp;gt; let strList1 = [&quot;My&quot;, &quot;name&quot;, &quot;is&quot;, &quot;Inigo&quot;, &quot;Montoya&quot;]
+ghci&amp;gt; foldr (++) [] strList1
+ghci&amp;gt; foldr (\x acc -&amp;gt; x ++ &quot; &quot; ++ acc) [] strList1
+ghci&amp;gt; foldr1 (\x acc -&amp;gt; x ++ &quot; &quot; ++ acc) strList1
+
+ghci&amp;gt; foldr (\_ acc -&amp;gt; 1 + acc) 0 list1To5
+
+ghci&amp;gt; let list1To5 = [1..5]
+ghci&amp;gt; foldr (:) [] list1To5
+ghci&amp;gt; foldl (:) [] list1To5
+ghci&amp;gt; foldl (\acc x -&amp;gt; x : acc) [] list1To5
+ghci&amp;gt; foldr (\x xs -&amp;gt; xs ++ [x]) [] list1To5
+
+ghci&amp;gt; let listRand = [1,4,2,6,5,3]
+ghci&amp;gt; foldr1 max listRand
+ghci&amp;gt; foldr1 min listRand
+
+ghci&amp;gt; let listBool = [True, False, True, False]
+ghci&amp;gt; foldr (||) False listBool
+ghci&amp;gt; foldr (&amp;amp;&amp;amp;) True listBool
+
+ghci&amp;gt; foldr (+) 0 list1To5 == foldl (+) 0 list1To5
+ghci&amp;gt; foldr (*) 0 list1To5 == foldl (*) 0 list1To5
+ghci&amp;gt; foldr (-) 0 list1To5 == foldl (-) 0 list1To5
+
+ghci&amp;gt; let list321 = [3,2,1]
+ghci&amp;gt; foldr (-) 0 list321
+ghci&amp;gt; foldr1 (-) list321
+ghci&amp;gt; foldl (-) 0 list321
+ghci&amp;gt; foldl1 (-) 0 list321
+&lt;/code&gt;&lt;/pre&gt;"><span class="hljs-title">ghci</span>&gt; <span class="hljs-keyword">let</span> strList1 = [<span class="hljs-string">"My"</span>, <span class="hljs-string">"name"</span>, <span class="hljs-string">"is"</span>, <span class="hljs-string">"Inigo"</span>, <span class="hljs-string">"Montoya"</span>]
+<span class="hljs-title">ghci</span>&gt; foldr (++) [] strList1
+<span class="hljs-title">ghci</span>&gt; foldr (\x acc -&gt; x ++ <span class="hljs-string">" "</span> ++ acc) [] strList1
+<span class="hljs-title">ghci</span>&gt; foldr1 (\x acc -&gt; x ++ <span class="hljs-string">" "</span> ++ acc) strList1
+
+<span class="hljs-title">ghci</span>&gt; foldr (\_ acc -&gt; <span class="hljs-number">1</span> + acc) <span class="hljs-number">0</span> list1To5
+
+<span class="hljs-title">ghci</span>&gt; <span class="hljs-keyword">let</span> list1To5 = [<span class="hljs-number">1.</span>.<span class="hljs-number">5</span>]
+<span class="hljs-title">ghci</span>&gt; foldr (:) [] list1To5
+<span class="hljs-title">ghci</span>&gt; foldl (:) [] list1To5
+<span class="hljs-title">ghci</span>&gt; foldl (\acc x -&gt; x : acc) [] list1To5
+<span class="hljs-title">ghci</span>&gt; foldr (\x xs -&gt; xs ++ [x]) [] list1To5
+
+<span class="hljs-title">ghci</span>&gt; <span class="hljs-keyword">let</span> listRand = [<span class="hljs-number">1</span>,<span class="hljs-number">4</span>,<span class="hljs-number">2</span>,<span class="hljs-number">6</span>,<span class="hljs-number">5</span>,<span class="hljs-number">3</span>]
+<span class="hljs-title">ghci</span>&gt; foldr1 max listRand
+<span class="hljs-title">ghci</span>&gt; foldr1 min listRand
+
+<span class="hljs-title">ghci</span>&gt; <span class="hljs-keyword">let</span> listBool = [<span class="hljs-type">True</span>, <span class="hljs-type">False</span>, <span class="hljs-type">True</span>, <span class="hljs-type">False</span>]
+<span class="hljs-title">ghci</span>&gt; foldr (||) <span class="hljs-type">False</span> listBool
+<span class="hljs-title">ghci</span>&gt; foldr (&amp;&amp;) <span class="hljs-type">True</span> listBool
+
+<span class="hljs-title">ghci</span>&gt; foldr (+) <span class="hljs-number">0</span> list1To5 == foldl (+) <span class="hljs-number">0</span> list1To5
+<span class="hljs-title">ghci</span>&gt; foldr (*) <span class="hljs-number">0</span> list1To5 == foldl (*) <span class="hljs-number">0</span> list1To5
+<span class="hljs-title">ghci</span>&gt; foldr (-) <span class="hljs-number">0</span> list1To5 == foldl (-) <span class="hljs-number">0</span> list1To5
+
+<span class="hljs-title">ghci</span>&gt; <span class="hljs-keyword">let</span> list321 = [<span class="hljs-number">3</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>]
+<span class="hljs-title">ghci</span>&gt; foldr (-) <span class="hljs-number">0</span> list321
+<span class="hljs-title">ghci</span>&gt; foldr1 (-) list321
+<span class="hljs-title">ghci</span>&gt; foldl (-) <span class="hljs-number">0</span> list321
+<span class="hljs-title">ghci</span>&gt; foldl1 (-) <span class="hljs-number">0</span> list321
+</code></pre>
+</li><li><p>Obliczyć w GHCi i przeanalizować wyrażenia</p>
+<pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;ghci&amp;gt; foldr (\x acc -&amp;gt; &quot;(&quot; ++ x ++ &quot; f &quot; ++ acc ++ &quot;)&quot;) &quot;z&quot; [&quot;1&quot;,&quot;2&quot;,&quot;3&quot;]
+ghci&amp;gt; foldr1 (\x acc -&amp;gt; &quot;(&quot; ++ x ++ &quot; f &quot; ++ acc ++ &quot;)&quot;) [&quot;1&quot;,&quot;2&quot;,&quot;3&quot;]
+
+ghci&amp;gt; foldl (\acc x -&amp;gt; &quot;(&quot; ++ acc ++ &quot; f &quot; ++ x ++ &quot;)&quot;) &quot;z&quot; [&quot;1&quot;,&quot;2&quot;,&quot;3&quot;]
+ghci&amp;gt; foldl1 (\acc x -&amp;gt; &quot;(&quot; ++ acc ++ &quot; f &quot; ++ x ++ &quot;)&quot;) [&quot;1&quot;,&quot;2&quot;,&quot;3&quot;]
+&lt;/code&gt;&lt;/pre&gt;"><span class="hljs-title">ghci</span>&gt; foldr (\x acc -&gt; <span class="hljs-string">"("</span> ++ x ++ <span class="hljs-string">" f "</span> ++ acc ++ <span class="hljs-string">")"</span>) <span class="hljs-string">"z"</span> [<span class="hljs-string">"1"</span>,<span class="hljs-string">"2"</span>,<span class="hljs-string">"3"</span>]
+<span class="hljs-title">ghci</span>&gt; foldr1 (\x acc -&gt; <span class="hljs-string">"("</span> ++ x ++ <span class="hljs-string">" f "</span> ++ acc ++ <span class="hljs-string">")"</span>) [<span class="hljs-string">"1"</span>,<span class="hljs-string">"2"</span>,<span class="hljs-string">"3"</span>]
+
+<span class="hljs-title">ghci</span>&gt; foldl (\acc x -&gt; <span class="hljs-string">"("</span> ++ acc ++ <span class="hljs-string">" f "</span> ++ x ++ <span class="hljs-string">")"</span>) <span class="hljs-string">"z"</span> [<span class="hljs-string">"1"</span>,<span class="hljs-string">"2"</span>,<span class="hljs-string">"3"</span>]
+<span class="hljs-title">ghci</span>&gt; foldl1 (\acc x -&gt; <span class="hljs-string">"("</span> ++ acc ++ <span class="hljs-string">" f "</span> ++ x ++ <span class="hljs-string">")"</span>) [<span class="hljs-string">"1"</span>,<span class="hljs-string">"2"</span>,<span class="hljs-string">"3"</span>]
+</code></pre>
+</li><li>(<em>opcjonalne</em>) Napisać definicje funkcji:<ul>
+<li><code>map</code> wykorzystując <code>foldr</code></li><li><code>map</code> wykorzystując <code>foldl</code></li><li><code>filter</code> wykorzystując <code>foldr</code></li><li><code>filter</code> wykorzystując <code>foldl</code></li><li><code>foldl</code> wykorzystując <code>foldr</code></li><li><code>foldr</code> wykorzystując <code>foldl</code></li></ul>
+</li></ol>
+</li></ol><h5 id="10)-funkcje:-```zip```,-```unzip```-i-```zipwith```"><a name="10)-funkcje:-```zip```,-```unzip```-i-```zipwith```" href="https://upel2.cel.agh.edu.pl/wiet/pluginfile.php/97507/mod_resource/content/2/fp-lab3.html#10)-funkcje:-%60%60%60zip%60%60%60,-%60%60%60unzip%60%60%60-i-%60%60%60zipwith%60%60%60"></a>10) Funkcje: <code>zip</code>, <code>unzip</code> i <code>zipWith</code></h5><ol>
+<li><p>W konsoli GHCi wpisujemy kolejno</p>
+<pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;ghci&amp;gt; zip [1,2,3] [&#39;a&#39;,&#39;b&#39;]
+ghci&amp;gt; unzip [(1,&#39;a&#39;),(2,&#39;b&#39;)]
+ghci&amp;gt; unzip (zip [1,2,3] [&#39;a&#39;,&#39;b&#39;])
+ghci&amp;gt; zip [1,2] [10,20] == zipWith (,) [1,2] [10,20]
+
+ghci&amp;gt; let endlessList = [1..]
+ghci&amp;gt; take 5 (zip endlessList (tail endlessList))
+&lt;/code&gt;&lt;/pre&gt;"><span class="hljs-title">ghci</span>&gt; zip [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>] ['a','b']
+<span class="hljs-title">ghci</span>&gt; unzip [(<span class="hljs-number">1</span>,'a'),(<span class="hljs-number">2</span>,'b')]
+<span class="hljs-title">ghci</span>&gt; unzip (zip [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>] ['a','b'])
+<span class="hljs-title">ghci</span>&gt; zip [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>] [<span class="hljs-number">10</span>,<span class="hljs-number">20</span>] == zipWith (,) [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>] [<span class="hljs-number">10</span>,<span class="hljs-number">20</span>]
+
+<span class="hljs-title">ghci</span>&gt; <span class="hljs-keyword">let</span> endlessList = [<span class="hljs-number">1.</span>.]
+<span class="hljs-title">ghci</span>&gt; take <span class="hljs-number">5</span> (zip endlessList (tail endlessList))
+</code></pre>
+<p>i analizujemy wyniki</p>
+</li><li><p><strong><em>Zadania</em></strong>:</p>
+<ol>
+<li>Wykorzystując <code>zip</code> lub <code>zipWith</code> napisać funkcję<pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;isSortedAsc :: Ord a =&amp;gt; [a] -&amp;gt; Bool
+isSortedAsc xs ... -- isSortedAsc [1,2,2,3] -&amp;gt; True, isSortedAsc [1,2,1] -&amp;gt; False
+&lt;/code&gt;&lt;/pre&gt;"><span class="hljs-title">isSortedAsc</span> :: <span class="hljs-type">Ord</span> a =&gt; [a] -&gt; <span class="hljs-type">Bool</span>
+<span class="hljs-title">isSortedAsc</span> xs ... <span class="hljs-comment">-- isSortedAsc [1,2,2,3] -&gt; True, isSortedAsc [1,2,1] -&gt; False</span>
+</code></pre>
+</li><li>Napisać funkcję<pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;everySecond :: [t] -&amp;gt; [t]
+everySecond xs = ... -- everySecond [1..8] -&amp;gt; [1,3,5,7]
+&lt;/code&gt;&lt;/pre&gt;"><span class="hljs-title">everySecond</span> :: [t] -&gt; [t]
+<span class="hljs-title">everySecond</span> xs = ... <span class="hljs-comment">-- everySecond [1..8] -&gt; [1,3,5,7]</span>
+</code></pre>
+</li><li><p>(<em>opcjonalne</em>) Napisać funkcje</p>
+<pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;zip3&#39; :: [a] -&amp;gt; [b] -&amp;gt; [c] -&amp;gt; [(a,b,c)]
+zip3&#39; ...
+
+unzip3&#39; :: [(a, b, c)] -&amp;gt; ([a], [b], [c])
+unzip3&#39; ...
+
+isSortedDesc :: Ord a =&amp;gt; [a] -&amp;gt; Bool
+isSortedDesc xs ... -- isSortedDesc [3,2,2,1] -&amp;gt; True, isSortedDesc [1,2,3] -&amp;gt; False
+
+isSorted :: Ord a =&amp;gt; [a] -&amp;gt; Bool
+isSorted xs ... -- isSorted [1,2,2,3] -&amp;gt; True, isSorted [3,2,1] -&amp;gt; True
+&lt;/code&gt;&lt;/pre&gt;"><span class="hljs-title">zip3'</span> :: [a] -&gt; [b] -&gt; [c] -&gt; [(a,b,c)]
+<span class="hljs-title">zip3'</span> ...
+
+<span class="hljs-title">unzip3'</span> :: [(a, b, c)] -&gt; ([a], [b], [c])
+<span class="hljs-title">unzip3'</span> ...
+
+<span class="hljs-title">isSortedDesc</span> :: <span class="hljs-type">Ord</span> a =&gt; [a] -&gt; <span class="hljs-type">Bool</span>
+<span class="hljs-title">isSortedDesc</span> xs ... <span class="hljs-comment">-- isSortedDesc [3,2,2,1] -&gt; True, isSortedDesc [1,2,3] -&gt; False</span>
+
+<span class="hljs-title">isSorted</span> :: <span class="hljs-type">Ord</span> a =&gt; [a] -&gt; <span class="hljs-type">Bool</span>
+<span class="hljs-title">isSorted</span> xs ... <span class="hljs-comment">-- isSorted [1,2,2,3] -&gt; True, isSorted [3,2,1] -&gt; True</span>
+</code></pre>
+</li><li>(<em>opcjonalne</em>) Przeanalizować następującą definicję ciągu Fibonacciego<pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;fibs = 0 : 1 : zipWith (+) fibs (tail fibs) :: [Int]
+&lt;/code&gt;&lt;/pre&gt;"><span class="hljs-title">fibs</span> = <span class="hljs-number">0</span> : <span class="hljs-number">1</span> : zipWith (+) fibs (tail fibs) :: [<span class="hljs-type">Int</span>]
+</code></pre>
+<em>Uwaga</em>: Pomocne może być porównanie z definicjami<pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;ones = 1 : ones
+nats = 1 : map (+1) nats
+&lt;/code&gt;&lt;/pre&gt;"><span class="hljs-title">ones</span> = <span class="hljs-number">1</span> : ones
+<span class="hljs-title">nats</span> = <span class="hljs-number">1</span> : map (+<span class="hljs-number">1</span>) nats
+</code></pre>
+</li></ol>
+</li></ol><h5 id="11)-funkcje-```concat```-i-```concatmap```"><a name="11)-funkcje-```concat```-i-```concatmap```" href="https://upel2.cel.agh.edu.pl/wiet/pluginfile.php/97507/mod_resource/content/2/fp-lab3.html#11)-funkcje-%60%60%60concat%60%60%60-i-%60%60%60concatmap%60%60%60"></a>11) Funkcje <code>concat</code> i  <code>concatMap</code></h5><ol>
+<li>W pliku <code>ex11.hs</code> definiujemy funkcję<pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;concat&#39; :: [[a]] -&amp;gt; [a]
+concat&#39; []     = []
+concat&#39; (x:xs) = x ++ concat&#39; xs
+&lt;/code&gt;&lt;/pre&gt;"><span class="hljs-title">concat'</span> :: [[a]] -&gt; [a]
+<span class="hljs-title">concat'</span> []     = []
+<span class="hljs-title">concat'</span> (x:xs) = x ++ concat' xs
+</code></pre>
+(zapisujemy zmiany, wczytujemy plik do GHCi) i sprawdzamy jej działanie<pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;ghci&amp;gt; concat&#39; [&quot;abc&quot;, &quot;def&quot;]
+ghci&amp;gt; concat&#39; [[1,2],[3,4]]
+ghci&amp;gt; (concat&#39; . concat&#39;) [ [[1,2], [3,4]] , [[5,6], [7,8]] ]
+&lt;/code&gt;&lt;/pre&gt;"><span class="hljs-title">ghci</span>&gt; concat' [<span class="hljs-string">"abc"</span>, <span class="hljs-string">"def"</span>]
+<span class="hljs-title">ghci</span>&gt; concat' [[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>],[<span class="hljs-number">3</span>,<span class="hljs-number">4</span>]]
+<span class="hljs-title">ghci</span>&gt; (concat' . concat') [ [[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>], [<span class="hljs-number">3</span>,<span class="hljs-number">4</span>]] , [[<span class="hljs-number">5</span>,<span class="hljs-number">6</span>], [<span class="hljs-number">7</span>,<span class="hljs-number">8</span>]] ]
+</code></pre>
+</li><li>W konsoli GHCi sprawdzamy typ funkcji bibliotecznej <code>concat</code> i sprawdzamy jej działanie, np.<pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;ghci&amp;gt; concat&#39; [&quot;abc&quot;, &quot;def&quot;] == concat [&quot;abc&quot;, &quot;def&quot;]
+&lt;/code&gt;&lt;/pre&gt;"><span class="hljs-title">ghci</span>&gt; concat' [<span class="hljs-string">"abc"</span>, <span class="hljs-string">"def"</span>] == concat [<span class="hljs-string">"abc"</span>, <span class="hljs-string">"def"</span>]
+</code></pre>
+</li><li>W konsoli GHCi sprawdzamy typ funkcji bibliotecznej <code>concatMap</code>. Jaki jest związek funkcji <code>concatMap</code> z funkcjami <code>map</code> i <code>concat</code>? Czy jest to zwykłe złożenie?</li><li><strong><em>Zadania</em></strong>:<ol>
+<li>(<em>opcjonalne</em>) Napisać definicję funkcji <code>concat</code> wykorzystując<ul>
+<li><em>list comprehension</em></li><li><code>foldr</code></li></ul>
+</li><li>(<em>opcjonalne</em>) Uzupełnić poniższe wyrażenia<pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;concat ___ map (___) ___ [1..5] -- [2,4,6,8,10]
+concatMap (___) [1..5] -- [2,4,6,8,10]
+concatMap (___) [&quot;Ready&quot;, &quot;Steady&quot;, &quot;Go&quot;] -- &quot;Ready!Steady!Go!&quot;
+&lt;/code&gt;&lt;/pre&gt;"><span class="hljs-title">concat</span> ___ map (___) ___ [<span class="hljs-number">1.</span>.<span class="hljs-number">5</span>] <span class="hljs-comment">-- [2,4,6,8,10]</span>
+<span class="hljs-title">concatMap</span> (___) [<span class="hljs-number">1.</span>.<span class="hljs-number">5</span>] <span class="hljs-comment">-- [2,4,6,8,10]</span>
+<span class="hljs-title">concatMap</span> (___) [<span class="hljs-string">"Ready"</span>, <span class="hljs-string">"Steady"</span>, <span class="hljs-string">"Go"</span>] <span class="hljs-comment">-- "Ready!Steady!Go!"</span>
+</code></pre>
+</li></ol>
+</li></ol><h5 id="12)-wzorzec-_collection-pipeline_"><a name="12)-wzorzec-_collection-pipeline_" href="https://upel2.cel.agh.edu.pl/wiet/pluginfile.php/97507/mod_resource/content/2/fp-lab3.html#12)-wzorzec-_collection-pipeline_"></a>12) Wzorzec <em>Collection pipeline</em></h5><ol>
+<li><p>W pliku <code>ex12.hs</code> wpisujemy</p>
+<pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;import Data.Char
+import Data.List
+
+capitalize :: [Char] -&amp;gt; [Char]
+capitalize [] = []
+capitalize (x:xs) = toUpper x : (map toLower xs)
+
+formatStr s = foldr1 (\w s -&amp;gt; w ++ &quot; &quot; ++ s) .
+          map capitalize .
+          filter (\x -&amp;gt; length x &amp;gt; 1) $
+          words s
+&lt;/code&gt;&lt;/pre&gt;"><span class="hljs-import"><span class="hljs-keyword">import</span> Data.Char</span>
+<span class="hljs-import"><span class="hljs-keyword">import</span> Data.List</span>
+
+<span class="hljs-title">capitalize</span> :: [<span class="hljs-type">Char</span>] -&gt; [<span class="hljs-type">Char</span>]
+<span class="hljs-title">capitalize</span> [] = []
+<span class="hljs-title">capitalize</span> (x:xs) = toUpper x : (map toLower xs)
+
+<span class="hljs-title">formatStr</span> s = foldr1 (\w s -&gt; w ++ <span class="hljs-string">" "</span> ++ s) .
+          map capitalize .
+          filter (\x -&gt; length x &gt; <span class="hljs-number">1</span>) $
+          words s
+</code></pre>
+<p>zapisujemy zmiany, wczytujemy plik do GHCi i sprawdzamy działanie</p>
+<pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;ghci&amp;gt; formatStr &quot;tomasz  t  ,     bogdan anna . Jerzy j    maria&quot;
+&lt;/code&gt;&lt;/pre&gt;"><span class="hljs-title">ghci</span>&gt; formatStr <span class="hljs-string">"tomasz  t  ,     bogdan anna . Jerzy j    maria"</span>
+</code></pre>
+</li><li><p>W pliku <code>ex12.hs</code> wpisujemy</p>
+<pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;prodPrices p = case p of
+ &quot;A&quot; -&amp;gt; 100
+ &quot;B&quot; -&amp;gt; 500
+ &quot;C&quot; -&amp;gt; 1000
+ _   -&amp;gt; error &quot;Unknown product&quot;
+
+products = [&quot;A&quot;,&quot;B&quot;,&quot;C&quot;]
+
+-- basic discount strategy
+discStr1 p
+ | price &amp;gt; 999 = 0.3 * price
+ | otherwise   = 0.1 * price
+ where price = prodPrices p
+
+-- flat discount strategy
+discStr2 p = 0.2 * prodPrices p
+
+totalDiscout discStr =
+ foldl1 (+) .
+ map discStr .
+ filter (\p -&amp;gt; prodPrices p &amp;gt; 499)
+&lt;/code&gt;&lt;/pre&gt;"><span class="hljs-title">prodPrices</span> p = <span class="hljs-keyword">case</span> p <span class="hljs-keyword">of</span>
+ <span class="hljs-string">"A"</span> -&gt; <span class="hljs-number">100</span>
+ <span class="hljs-string">"B"</span> -&gt; <span class="hljs-number">500</span>
+ <span class="hljs-string">"C"</span> -&gt; <span class="hljs-number">1000</span>
+ _   -&gt; error <span class="hljs-string">"Unknown product"</span>
+
+<span class="hljs-title">products</span> = [<span class="hljs-string">"A"</span>,<span class="hljs-string">"B"</span>,<span class="hljs-string">"C"</span>]
+
+<span class="hljs-comment">-- basic discount strategy</span>
+<span class="hljs-title">discStr1</span> p
+ | price &gt; <span class="hljs-number">999</span> = <span class="hljs-number">0.3</span> * price
+ | otherwise   = <span class="hljs-number">0.1</span> * price
+ <span class="hljs-keyword">where</span> price = prodPrices p
+
+<span class="hljs-comment">-- flat discount strategy</span>
+<span class="hljs-title">discStr2</span> p = <span class="hljs-number">0.2</span> * prodPrices p
+
+<span class="hljs-title">totalDiscout</span> discStr =
+ foldl1 (+) .
+ map discStr .
+ filter (\p -&gt; prodPrices p &gt; <span class="hljs-number">499</span>)
+</code></pre>
+<p>zapisujemy zmiany, wczytujemy plik do GHCi i sprawdzamy działanie</p>
+<pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;ghci&amp;gt; totalDiscout discStr1 [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;]
+ghci&amp;gt; totalDiscout discStr2 [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;]
+&lt;/code&gt;&lt;/pre&gt;"><span class="hljs-title">ghci</span>&gt; totalDiscout discStr1 [<span class="hljs-string">"A"</span>, <span class="hljs-string">"B"</span>, <span class="hljs-string">"C"</span>]
+<span class="hljs-title">ghci</span>&gt; totalDiscout discStr2 [<span class="hljs-string">"A"</span>, <span class="hljs-string">"B"</span>, <span class="hljs-string">"C"</span>]
+</code></pre>
+</li><li><strong><em>Zadania</em></strong>:<ol>
+<li>(<em>opcjonalne</em>) Poprawić (zrefaktoryzować) powyższy kod (aspekty: czytelności, ogólności, wydajności)</li><li>Obliczyć w GHCi i przeanalizować wyrażenia<pre class="haskell hljs"><code class="haskell" data-origin="&lt;pre&gt;&lt;code class=&quot;haskell&quot;&gt;ghci&amp;gt; replicate 2 . product . map (*3) $ zipWith max [4,2] [1,5]
+ghci&amp;gt; sum . takeWhile (&amp;lt;1000) . filter odd . map (^2) $ [1..]
+ghci&amp;gt; length . fromList . Prelude.map toLower $ &quot;thirteen men must go&quot; -- potrzebny import Data.Set
+&lt;/code&gt;&lt;/pre&gt;"><span class="hljs-title">ghci</span>&gt; replicate <span class="hljs-number">2</span> . product . map (*<span class="hljs-number">3</span>) $ zipWith max [<span class="hljs-number">4</span>,<span class="hljs-number">2</span>] [<span class="hljs-number">1</span>,<span class="hljs-number">5</span>]
+<span class="hljs-title">ghci</span>&gt; sum . takeWhile (&lt;<span class="hljs-number">1000</span>) . filter odd . map (^<span class="hljs-number">2</span>) $ [<span class="hljs-number">1.</span>.]
+<span class="hljs-title">ghci</span>&gt; length . fromList . <span class="hljs-type">Prelude</span>.map toLower $ <span class="hljs-string">"thirteen men must go"</span> <span class="hljs-comment">-- potrzebny import Data.Set</span>
+</code></pre>
+</li></ol>
+</li></ol>
+
+<footer style="position:fixed; font-size:.8em; text-align:right; bottom:0px; margin-left:-25px; height:20px; width:100%;">generated by <a href="http://pad.haroopress.com/" target="_blank">haroopad</a></footer>
+
+
+</body></html>
